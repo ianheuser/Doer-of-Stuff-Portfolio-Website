@@ -19,7 +19,7 @@
 		<ParticleField variant="stars" count={32} />
 
 		<div class="space-head">
-			<h1>Welcome to the portfolio of Ian&nbsp;McCarthy, otherwise known as The&nbsp;Doer&nbsp;of&nbsp;Stuff</h1>
+			<h1>Welcome, to the portfolio of Ian&nbsp;McCarthy, otherwise known as The&nbsp;Doer&nbsp;of&nbsp;Stuff</h1>
 		</div>
 
 		<div class="astronaut">
