@@ -1,4 +1,5 @@
 <script>
+	import { asset } from '$app/paths';
 	import Nav from '$lib/components/Nav.svelte';
 	import ParticleField from '$lib/components/ParticleField.svelte';
 	import DefinitionCard from '$lib/components/DefinitionCard.svelte';
@@ -23,7 +24,7 @@
 		</div>
 
 		<div class="astronaut">
-			<img src="/images/astronaut.webp" alt="An astronaut floating in space, wearing glasses, with the DO logo on his suit" />
+			<img src={asset('/images/astronaut.webp')} alt="An astronaut floating in space, wearing glasses, with the DO logo on his suit" />
 		</div>
 
 		<div class="space-cards">

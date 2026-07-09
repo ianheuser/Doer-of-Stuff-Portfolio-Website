@@ -1,4 +1,6 @@
 <script>
+	import { asset } from '$app/paths';
+
 	/**
 	 * Slowly-rising background particles.
 	 * variant="stars"   → glowing white circles (space)
@@ -31,7 +33,12 @@
 	});
 </script>
 
-<div class="field" aria-hidden="true" bind:clientHeight={height} style="--rise: {height + 200}px">
+<div
+	class="field"
+	aria-hidden="true"
+	bind:clientHeight={height}
+	style="--rise: {height + 200}px"
+>
 	{#each particles as p}
 		<span
 			class="particle"
@@ -46,7 +53,12 @@
 				--rest-y: {p.restY}%;
 			"
 		>
-			<span class="body {variant}"></span>
+			<!-- background-image is inline so its relative URL resolves against
+			     the document, not the compiled stylesheet (subpath-safe) -->
+			<span
+				class="body {variant}"
+				style={variant === 'bubbles' ? `background-image: url('${asset('/images/bubble.svg')}')` : ''}
+			></span>
 		</span>
 	{/each}
 </div>
@@ -85,7 +97,9 @@
 	}
 
 	.body.bubbles {
-		background: url('/images/bubble.svg') center / 100% 100% no-repeat;
+		background-position: center;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
 		filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.55));
 	}
 

@@ -1,29 +1,33 @@
 <script>
+	import { asset } from '$app/paths';
+
 	/**
 	 * The space → underwater transition. Four stacked wave layers, each a
 	 * repeating tileable crest SVG with a solid body below it. The astronaut
 	 * (rendered by the parent) sinks between the light-pink and dark-pink
 	 * layers via z-index.
+	 *
+	 * Note: background-image is set inline (not via CSS custom properties)
+	 * because relative url()s inside custom properties resolve against the
+	 * compiled stylesheet's URL in Chromium, which 404s when the site is
+	 * served from a subpath (e.g. GitHub Pages project sites). Inline style
+	 * URLs always resolve against the document.
 	 */
+	const layers = [
+		{ name: 'white', img: asset('/images/wave-white.svg') },
+		{ name: 'lightpink', img: asset('/images/wave-lightpink.svg') },
+		{ name: 'pink', img: asset('/images/wave-pink.svg') },
+		{ name: 'front', img: asset('/images/wave-bluepink.svg') }
+	];
 </script>
 
 <div class="waves" aria-hidden="true">
-	<div class="layer white">
-		<div class="crest"></div>
-		<div class="body"></div>
-	</div>
-	<div class="layer lightpink">
-		<div class="crest"></div>
-		<div class="body"></div>
-	</div>
-	<div class="layer pink">
-		<div class="crest"></div>
-		<div class="body"></div>
-	</div>
-	<div class="layer front">
-		<div class="crest"></div>
-		<div class="body"></div>
-	</div>
+	{#each layers as layer (layer.name)}
+		<div class="layer {layer.name}">
+			<div class="crest" style="background-image: url('{layer.img}')"></div>
+			<div class="body"></div>
+		</div>
+	{/each}
 </div>
 
 <style>
@@ -62,10 +66,6 @@
 		opacity: 0.24;
 	}
 
-	.layer.white .crest {
-		background-image: url('/images/wave-white.svg');
-	}
-
 	.layer.white .body {
 		background: rgba(255, 255, 255, 0.7);
 	}
@@ -76,7 +76,6 @@
 	}
 
 	.layer.lightpink .crest {
-		background-image: url('/images/wave-lightpink.svg');
 		animation-duration: 34s;
 		animation-direction: reverse;
 	}
@@ -91,7 +90,6 @@
 	}
 
 	.layer.pink .crest {
-		background-image: url('/images/wave-pink.svg');
 		animation-duration: 42s;
 	}
 
@@ -105,7 +103,6 @@
 	}
 
 	.layer.front .crest {
-		background-image: url('/images/wave-bluepink.svg');
 		animation-duration: 52s;
 		animation-direction: reverse;
 	}

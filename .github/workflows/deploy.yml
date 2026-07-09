@@ -24,7 +24,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - name: Build
+        env:
+          # Serves the site from /<repo-name> on GitHub Pages.
+          # Delete this env block if you move to a custom domain or user site.
+          BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build

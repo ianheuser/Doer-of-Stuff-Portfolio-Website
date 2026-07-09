@@ -1,4 +1,5 @@
 <script>
+	import { asset } from '$app/paths';
 	/**
 	 * Dictionary-style definition card ("doer", "stuff").
 	 * The speaker icon pronounces the word via SpeechSynthesis when available.
@@ -26,10 +27,10 @@
 		</h3>
 		{#if canSpeak}
 			<button class="speaker" onclick={speak} aria-label="Pronounce “{word}”">
-				<img src="/images/speaker-1.svg" alt="" width="34" height="29" />
+				<img src="{asset('/images/speaker-1.svg')}" alt="" width="34" height="29" />
 			</button>
 		{:else}
-			<img class="speaker-static" src="/images/speaker-1.svg" alt="" width="34" height="29" />
+			<img class="speaker-static" src="{asset('/images/speaker-1.svg')}" alt="" width="34" height="29" />
 		{/if}
 	</header>
 

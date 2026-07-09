@@ -1,4 +1,6 @@
 <script>
+	import { asset, resolve } from '$app/paths';
+
 	let open = $state(false);
 
 	const links = [
@@ -13,8 +15,8 @@
 </script>
 
 <header class="nav">
-	<a class="logo" href="/" aria-label="The Doer of Stuff — home">
-		<img src="/images/do-logo.svg" alt="" width="42" height="26" />
+	<a class="logo" href={resolve('/')} aria-label="The Doer of Stuff — home">
+		<img src={asset('/images/do-logo.svg')} alt="" width="42" height="26" />
 	</a>
 
 	<button

@@ -1,4 +1,5 @@
 <script>
+	import { asset } from '$app/paths';
 	import { fade } from 'svelte/transition';
 	import { projects } from '$lib/data/projects.js';
 
@@ -40,7 +41,7 @@
 				<p class="description">{project.description}</p>
 			</div>
 			<div class="image">
-				<img src={project.image} alt="Screenshot of {project.title}" />
+				<img src={asset(project.image)} alt="Screenshot of {project.title}" />
 			</div>
 		</article>
 	{/key}
@@ -63,7 +64,7 @@
 						aria-label="View project: {projects[index].title}"
 						aria-current={index === selected}
 					>
-						<img src={projects[index].thumb} alt="" loading="lazy" />
+						<img src={asset(projects[index].thumb)} alt="" loading="lazy" />
 					</button>
 				</li>
 			{/each}

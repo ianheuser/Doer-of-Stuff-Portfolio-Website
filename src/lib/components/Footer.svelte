@@ -1,6 +1,10 @@
+<script>
+	import { asset, resolve } from '$app/paths';
+</script>
+
 <footer>
-	<a href="/" aria-label="The Doer of Stuff — back to top">
-		<img src="/images/do-logo.svg" alt="" width="42" height="26" />
+	<a href={resolve('/')} aria-label="The Doer of Stuff — back to top">
+		<img src={asset('/images/do-logo.svg')} alt="" width="42" height="26" />
 	</a>
 	<p>©2026 The Doer of Stuff</p>
 </footer>
