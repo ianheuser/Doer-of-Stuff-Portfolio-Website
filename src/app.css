@@ -1,0 +1,95 @@
+/* ---------------------------------------------------------------------------
+   The Doer of Stuff — global styles & design tokens (from Figma mock)
+--------------------------------------------------------------------------- */
+
+:root {
+	/* Colors */
+	--c-space-top: #081420;
+	--c-space-bottom: #225486;
+	--c-ocean: #001e3d;
+	--c-accent: #b40034; /* dark pink / ribbon */
+	--c-pink: #fc3770; /* light pink wave */
+	--c-wave-front-top: #7f0025;
+	--c-card: rgba(25, 36, 49, 0.83);
+	--c-card-solid: #192431;
+	--c-text: #f2f2f2;
+
+	/* Type */
+	--font-display: 'Josefin Sans', sans-serif;
+	--font-body: 'Nunito Sans', sans-serif;
+	--font-nunito: 'Nunito', sans-serif;
+	--font-quicksand: 'Quicksand', sans-serif;
+
+	/* Layout */
+	--nav-height: 86px;
+	--content-max: 1440px;
+	--gutter: clamp(20px, 4vw, 72px);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-body);
+	color: var(--c-text);
+	background: var(--c-ocean);
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	color: #fff;
+	margin: 0;
+}
+
+button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

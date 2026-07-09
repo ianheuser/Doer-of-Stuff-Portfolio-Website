@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__8e7d4cd9-df2f-4d33-adb9-9c844af474a2__get_design_context",
+      "Bash(sips -g pixelWidth -g pixelHeight astronaut.png bms-calculator.png thumbnail-a.png thumbnail-b.png thumbnail-c.png thumbnail-d.png logo.png logo-small.png)"
+    ]
+  }
+}
