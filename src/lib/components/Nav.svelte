@@ -15,39 +15,42 @@
 </script>
 
 <header class="nav">
-	<a class="logo" href={resolve('/')} aria-label="The Doer of Stuff — home">
-		<img src={asset('/images/do-logo.svg')} alt="" width="42" height="26" />
-	</a>
+	<div class="nav-inner">
+		<a class="logo" href={resolve('/')} aria-label="The Doer of Stuff — home">
+			<img src={asset('/images/do-logo.svg')} alt="" width="42" height="26" />
+		</a>
 
-	<button
-		class="hamburger"
-		class:open
-		aria-expanded={open}
-		aria-controls="site-menu"
-		onclick={() => (open = !open)}
-	>
-		<span class="visually-hidden">Menu</span>
-		<span class="bar"></span>
-		<span class="bar"></span>
-		<span class="bar"></span>
-	</button>
+		<button
+			class="hamburger"
+			class:open
+			aria-expanded={open}
+			aria-controls="site-menu"
+			onclick={() => (open = !open)}
+		>
+			<span class="visually-hidden">Menu</span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</button>
 
-	<nav id="site-menu" class="menu" class:open aria-label="Site">
-		<ul>
-			{#each links as link}
-				<li>
-					{#if link.soon}
-						<span class="soon">{link.label} <em>coming soon</em></span>
-					{:else}
-						<a href={link.href} onclick={close}>{link.label}</a>
-					{/if}
-				</li>
-			{/each}
-		</ul>
-	</nav>
+		<nav id="site-menu" class="menu" class:open aria-label="Site">
+			<ul>
+				{#each links as link}
+					<li>
+						{#if link.soon}
+							<span class="soon">{link.label} <em>coming soon</em></span>
+						{:else}
+							<a href={link.href} onclick={close}>{link.label}</a>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	</div>
 </header>
 
 <style>
+	/* The bar bleeds edge to edge; its contents align with the 1240px column */
 	.nav {
 		position: fixed;
 		top: 0;
@@ -55,15 +58,22 @@
 		right: 0;
 		z-index: 100;
 		height: var(--nav-height);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0 clamp(16px, 3vw, 44px);
 		background: rgba(8, 20, 32, 0.55);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
 		border-bottom: 7px solid var(--c-accent);
 		box-shadow: 0 2px 1px 0 #93002b;
+	}
+
+	.nav-inner {
+		position: relative;
+		height: 100%;
+		max-width: var(--content-max);
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 var(--gutter);
 	}
 
 	.logo img {
@@ -102,7 +112,7 @@
 	.menu {
 		position: absolute;
 		top: calc(100% + 7px);
-		right: 0;
+		right: var(--gutter);
 		min-width: 240px;
 		background: var(--c-card-solid);
 		border-bottom: 7px solid var(--c-accent);

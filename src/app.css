@@ -22,7 +22,7 @@
 
 	/* Layout */
 	--nav-height: 86px;
-	--content-max: 1440px;
+	--content-max: 1240px;
 	--gutter: clamp(20px, 4vw, 72px);
 }
 

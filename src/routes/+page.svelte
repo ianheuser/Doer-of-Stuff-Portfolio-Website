@@ -118,9 +118,10 @@
 		margin-top: 120px;
 	}
 
-	/* Cards dip into the waves like the mock */
+	/* Pull the waves up so the cards dip into them and the colors (plus the
+	   astronaut sinking in) are visible on the first screenful of large displays */
 	.space-cards {
-		margin-bottom: -130px;
+		margin-bottom: -300px;
 	}
 
 	/* Astronaut spans from the hero down into the waves; z-index 3 tucks him
@@ -129,8 +130,8 @@
 		position: absolute;
 		z-index: 3;
 		top: calc(var(--nav-height) + 34px);
-		left: 3vw;
-		width: min(40vw, 604px);
+		left: max(3vw, calc(50vw - var(--content-max) / 2));
+		width: min(28vw, 350px);
 		aspect-ratio: 599 / 1591;
 		overflow: hidden;
 		transform: rotate(0.54deg);
