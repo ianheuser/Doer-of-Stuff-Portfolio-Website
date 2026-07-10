@@ -29,17 +29,16 @@
 				delay: -rand(0, duration), // negative delay pre-populates the field
 				sway: rand(4, 7),
 				swayDist: rand(6, 22),
-				blur: 0,
 				z: null,
 				restY: rand(2, 96) // resting spot when reduced motion is on
 			};
 		}
 
-		// Stars: mostly tiny and distant, drifting very slowly. Size drives the
-		// depth of field — small = far (dim, slow, soft), big = near (bright).
+		// Stars: mostly tiny and distant, rising over ~90s. Size drives the
+		// depth of field — small = far (dim, slower), big = near (bright).
 		const size = 2 + 14 * Math.pow(Math.random(), 2.2);
 		const depth = size / 16; // 0 = far, 1 = near
-		const duration = rand(130, 220) + (1 - depth) * 90;
+		const duration = rand(80, 100) + (1 - depth) * 20;
 		// A few stars ride in front of the wave layers (z 2/4 sits between
 		// them) so they seem to drift up from between the crests.
 		const roll = Math.random();
@@ -52,7 +51,6 @@
 			delay: -rand(0, duration),
 			sway: rand(10, 18),
 			swayDist: rand(1, 3),
-			blur: size < 3.5 ? 0.8 : size > 11 ? 1.4 : 0,
 			z,
 			restY: rand(2, 96)
 		};
@@ -76,7 +74,6 @@
 				--delay: {p.delay}s;
 				--sway-dur: {p.sway}s;
 				--sway-dist: {p.swayDist}px;
-				--blur: {p.blur}px;
 				--rest-y: {p.restY}%;
 				{p.z !== null ? `z-index: ${p.z};` : ''}
 			"
@@ -123,7 +120,6 @@
 		box-shadow:
 			0 0 calc(var(--size) * 1.2) calc(var(--size) * 0.15) rgba(255, 255, 255, 0.85),
 			0 0 calc(var(--size) * 4) rgba(255, 255, 255, 0.3);
-		filter: blur(var(--blur, 0px));
 	}
 
 	.body.bubbles {

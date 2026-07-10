@@ -3,34 +3,45 @@
 	import { fade } from 'svelte/transition';
 	import { projects } from '$lib/data/projects.js';
 
-	const VISIBLE = 4;
-	const n = projects.length;
+	const CYCLE_MS = 8000;
 
 	let selected = $state(0);
-	let windowStart = $state(0);
-
-	/** Indices of the thumbnails currently in view (wraps around the list). */
-	const visible = $derived(Array.from({ length: Math.min(VISIBLE, n) }, (_, i) => (windowStart + i) % n));
+	let paused = $state(false);
 
 	const project = $derived(projects[selected]);
-
-	function next() {
-		selected = (selected + 1) % n;
-		if (!visible.includes(selected)) windowStart = (windowStart + 1) % n;
-	}
-
-	function prev() {
-		selected = (selected - 1 + n) % n;
-		if (!visible.includes(selected)) windowStart = (windowStart - 1 + n) % n;
-	}
 
 	/** @param {number} index */
 	function select(index) {
 		selected = index;
+		restart();
 	}
+
+	// Slowly cycle through the projects; clicking a thumbnail restarts the
+	// timer, hovering the showcase pauses it, reduced-motion disables it.
+	let timer;
+
+	function restart() {
+		clearInterval(timer);
+		if (typeof window === 'undefined') return;
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		timer = setInterval(() => {
+			if (!paused) selected = (selected + 1) % projects.length;
+		}, CYCLE_MS);
+	}
+
+	$effect(() => {
+		restart();
+		return () => clearInterval(timer);
+	});
 </script>
 
-<div class="showcase">
+<div
+	class="showcase"
+	onmouseenter={() => (paused = true)}
+	onmouseleave={() => (paused = false)}
+	role="group"
+	aria-label="Featured projects"
+>
 	<!-- Featured project -->
 	{#key selected}
 		<article class="featured" in:fade={{ duration: 350 }}>
@@ -46,40 +57,22 @@
 		</article>
 	{/key}
 
-	<!-- Thumbnail carousel -->
-	<div class="carousel">
-		<button class="arrow" onclick={prev} aria-label="Previous project">
-			<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-				<polyline points="15 4 7 12 15 20" />
-			</svg>
-		</button>
-
-		<ul class="thumbs">
-			{#each visible as index (index)}
-				<li>
-					<button
-						class="thumb"
-						class:active={index === selected}
-						onclick={() => select(index)}
-						aria-label="View project: {projects[index].title}"
-						aria-current={index === selected}
-					>
-						<img src={asset(projects[index].thumb)} alt="" loading="lazy" />
-					</button>
-				</li>
-			{/each}
-		</ul>
-
-		<button class="arrow" onclick={next} aria-label="Next project">
-			<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-				<polyline points="9 4 17 12 9 20" />
-			</svg>
-		</button>
-	</div>
-
-	<p class="count" aria-live="polite">
-		Project {selected + 1} of {n}
-	</p>
+	<!-- All projects, two rows of four -->
+	<ul class="thumbs">
+		{#each projects as p, index (p.id)}
+			<li>
+				<button
+					class="thumb"
+					class:active={index === selected}
+					onclick={() => select(index)}
+					aria-label="View project: {p.title}"
+					aria-current={index === selected}
+				>
+					<img src={asset(p.thumb)} alt="" loading="lazy" />
+				</button>
+			</li>
+		{/each}
+	</ul>
 </div>
 
 <style>
@@ -120,21 +113,13 @@
 		border-radius: 6px;
 	}
 
-	.carousel {
-		display: flex;
-		align-items: center;
-		gap: clamp(12px, 2vw, 32px);
-	}
-
 	.thumbs {
 		list-style: none;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: clamp(10px, 2vw, 72px);
+		gap: clamp(10px, 2.4vw, 36px);
 		margin: 0;
 		padding: 0;
-		flex: 1;
-		min-width: 0;
 	}
 
 	.thumb {
@@ -162,39 +147,6 @@
 	.thumb.active {
 		opacity: 1;
 		box-shadow: 0 0 0 3px var(--c-pink), 0 0 24px rgba(252, 55, 112, 0.5);
-	}
-
-	.arrow {
-		flex-shrink: 0;
-		display: grid;
-		place-items: center;
-		width: clamp(40px, 4vw, 52px);
-		height: clamp(40px, 4vw, 52px);
-		border-radius: 50%;
-		color: #fff;
-		background: rgba(255, 255, 255, 0.08);
-		border: 2px solid rgba(255, 255, 255, 0.55);
-		backdrop-filter: blur(4px);
-		-webkit-backdrop-filter: blur(4px);
-		transition: box-shadow 0.2s ease, background 0.2s ease, transform 0.2s ease;
-	}
-
-	.arrow:hover,
-	.arrow:focus-visible {
-		background: rgba(255, 255, 255, 0.18);
-		box-shadow: 0 0 17px rgba(255, 255, 255, 0.9); /* "bubblefade" glow from the mock */
-		transform: scale(1.06);
-	}
-
-	.arrow:active {
-		transform: scale(0.96);
-	}
-
-	.count {
-		margin: 18px 0 0;
-		text-align: center;
-		font-size: 14px;
-		opacity: 0.6;
 	}
 
 	@media (max-width: 820px) {

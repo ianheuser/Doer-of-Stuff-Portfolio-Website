@@ -76,5 +76,25 @@ export const projects = [
 			'Placeholder — a dense, filterable reporting dashboard handling large datasets with server-side processing. Replace this copy with the real story.',
 		image: '/images/project-calc-main.webp',
 		thumb: '/images/project-calc-main.webp'
+	},
+	{
+		id: 'brand-identity',
+		title: 'Brand Identity & Logo Suite',
+		role: 'Graphic Designer',
+		tools: 'Illustrator, Photoshop',
+		description:
+			'Placeholder — a full identity package: logo, business cards, stationery, and brand guidelines. Replace this copy with the real story.',
+		image: '/images/project-thumb-7.webp',
+		thumb: '/images/project-thumb-7.webp'
+	},
+	{
+		id: 'ai-prototype',
+		title: 'AI Assisted Rapid Prototype',
+		role: 'Designer and Prompt Engineer',
+		tools: 'MidJourney, Framer, Figma',
+		description:
+			'Placeholder — a concept-to-clickable prototype built in days using AI-assisted asset generation and rapid iteration. Replace this copy with the real story.',
+		image: '/images/project-thumb-11.webp',
+		thumb: '/images/project-thumb-11.webp'
 	}
 ];
