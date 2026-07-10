@@ -32,11 +32,26 @@
 
 <style>
 	.waves {
-		/* Layer geometry (desktop), scaled down at the mobile breakpoint */
+		/* Layer geometry: top offsets of each colored layer as multiples of
+		   the crest height. Overridden at ≥1240px so the colored waves ride
+		   higher and the astronaut nests between them. */
 		--crest-h: clamp(106px, 15vw, 226px);
 		--tile-w: clamp(200px, 28vw, 428px);
+		--at-lightpink: 1.27;
+		--at-pink: 1.67;
+		--at-front: 2.4;
+		--total: 3.4;
 		position: relative;
-		height: calc(var(--crest-h) * 3.4);
+		height: calc(var(--crest-h) * var(--total));
+	}
+
+	@media (min-width: 1240px) {
+		.waves {
+			--at-lightpink: 0.9;
+			--at-pink: 1.25;
+			--at-front: 2;
+			--total: 3;
+		}
 	}
 
 	.layer {
@@ -71,7 +86,7 @@
 	}
 
 	.layer.lightpink {
-		top: calc(var(--crest-h) * 1.27);
+		top: calc(var(--crest-h) * var(--at-lightpink));
 		z-index: 2;
 	}
 
@@ -85,7 +100,7 @@
 	}
 
 	.layer.pink {
-		top: calc(var(--crest-h) * 1.67);
+		top: calc(var(--crest-h) * var(--at-pink));
 		z-index: 4;
 	}
 
@@ -98,7 +113,7 @@
 	}
 
 	.layer.front {
-		top: calc(var(--crest-h) * 2.4);
+		top: calc(var(--crest-h) * var(--at-front));
 		z-index: 5;
 	}
 

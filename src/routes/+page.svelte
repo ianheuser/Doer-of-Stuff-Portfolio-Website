@@ -17,7 +17,7 @@
 <main>
 	<!-- ============ SPACE: hero, definition cards, astronaut ============ -->
 	<section class="top" aria-label="Introduction">
-		<ParticleField variant="stars" count={32} />
+		<ParticleField variant="stars" count={48} />
 
 		<div class="space-head">
 			<h1>Welcome, to the portfolio of Ian&nbsp;McCarthy, otherwise known as The&nbsp;Doer&nbsp;of&nbsp;Stuff</h1>

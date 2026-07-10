@@ -17,18 +17,44 @@
 	}
 
 	const particles = Array.from({ length: count }, () => {
-		const size = rand(4, 40);
-		// Bigger particles read as "closer", so let them move a touch faster
-		const duration = rand(38, 75) - size * 0.35;
+		if (variant === 'bubbles') {
+			const size = rand(4, 40);
+			// Bigger bubbles read as "closer", so let them move a touch faster
+			const duration = rand(38, 75) - size * 0.35;
+			return {
+				size,
+				left: rand(-1, 100),
+				opacity: rand(0.35, 0.95),
+				duration,
+				delay: -rand(0, duration), // negative delay pre-populates the field
+				sway: rand(4, 7),
+				swayDist: rand(6, 22),
+				blur: 0,
+				z: null,
+				restY: rand(2, 96) // resting spot when reduced motion is on
+			};
+		}
+
+		// Stars: mostly tiny and distant, drifting very slowly. Size drives the
+		// depth of field — small = far (dim, slow, soft), big = near (bright).
+		const size = 2 + 14 * Math.pow(Math.random(), 2.2);
+		const depth = size / 16; // 0 = far, 1 = near
+		const duration = rand(130, 220) + (1 - depth) * 90;
+		// A few stars ride in front of the wave layers (z 2/4 sits between
+		// them) so they seem to drift up from between the crests.
+		const roll = Math.random();
+		const z = roll > 0.88 ? 4 : roll > 0.72 ? 2 : null;
 		return {
 			size,
 			left: rand(-1, 100),
-			opacity: variant === 'stars' ? rand(0.18, 0.96) : rand(0.35, 0.95),
+			opacity: 0.15 + depth * 0.7 + rand(0, 0.1),
 			duration,
-			delay: -rand(0, duration), // negative delay pre-populates the field
-			sway: rand(4, 7),
-			swayDist: variant === 'bubbles' ? rand(6, 22) : rand(2, 6),
-			restY: rand(2, 96) // resting spot when reduced motion is on
+			delay: -rand(0, duration),
+			sway: rand(10, 18),
+			swayDist: rand(1, 3),
+			blur: size < 3.5 ? 0.8 : size > 11 ? 1.4 : 0,
+			z,
+			restY: rand(2, 96)
 		};
 	});
 </script>
@@ -50,7 +76,9 @@
 				--delay: {p.delay}s;
 				--sway-dur: {p.sway}s;
 				--sway-dist: {p.swayDist}px;
+				--blur: {p.blur}px;
 				--rest-y: {p.restY}%;
+				{p.z !== null ? `z-index: ${p.z};` : ''}
 			"
 		>
 			<!-- background-image is inline so its relative URL resolves against
@@ -91,9 +119,11 @@
 	.body.stars {
 		background: rgba(255, 255, 255, 0.96);
 		border-radius: 50%;
+		/* Glow scales with the star instead of a fixed 50px halo */
 		box-shadow:
-			0 0 8px 2px rgba(255, 255, 255, 0.8),
-			0 0 50px 0 #fff;
+			0 0 calc(var(--size) * 1.2) calc(var(--size) * 0.15) rgba(255, 255, 255, 0.85),
+			0 0 calc(var(--size) * 4) rgba(255, 255, 255, 0.3);
+		filter: blur(var(--blur, 0px));
 	}
 
 	.body.bubbles {
