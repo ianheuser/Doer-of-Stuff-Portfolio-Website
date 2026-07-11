@@ -20,11 +20,17 @@
 		<ParticleField variant="stars" count={48} />
 
 		<div class="space-head">
-			<h1>Welcome, to the portfolio of Ian&nbsp;McCarthy, otherwise known as The&nbsp;Doer&nbsp;of&nbsp;Stuff</h1>
+			<h1>
+				<span class="h-desktop">Hello, I am The&nbsp;Doer&nbsp;of&nbsp;Stuff.<br />Welcome to my portfolio.</span>
+				<span class="h-phone">Hello, I am The&nbsp;Doer&nbsp;of&nbsp;Stuff, and this is my portfolio.</span>
+			</h1>
 		</div>
 
 		<div class="astronaut">
-			<img src={asset('/images/astronaut.webp')} alt="An astronaut floating in space, wearing glasses, with the DO logo on his suit" />
+			<img
+				src={asset('/images/astronaut2.webp')}
+				alt="An astronaut in a knit beanie with the DO logo, helmet tucked under his arm"
+			/>
 		</div>
 
 		<div class="space-cards">
@@ -57,12 +63,12 @@
 		<WaveDivider />
 	</section>
 
-	<!-- ============ UNDERWATER: recent and notable stuff ============ -->
+	<!-- ============ UNDERWATER: stuff I done did already ============ -->
 	<section class="ocean" id="stuff" aria-label="Recent and notable projects">
 		<ParticleField variant="bubbles" count={20} />
 
 		<div class="ocean-content">
-			<h2>Recent and Notable Stuff</h2>
+			<h2>Stuff I Done Did Already</h2>
 			<ProjectShowcase />
 		</div>
 
@@ -81,71 +87,64 @@
 	.space-head,
 	.space-cards {
 		position: relative;
-		z-index: 6;
+		z-index: 7;
 		max-width: var(--content-max);
 		margin: 0 auto;
 		padding: 0 var(--gutter);
 	}
 
 	.space-head {
-		padding-top: calc(var(--nav-height) + clamp(60px, 9.5vw, 144px));
+		padding-top: calc(var(--nav-height) + clamp(56px, 8.5vw, 125px));
 	}
 
 	h1 {
-		max-width: 735px;
+		max-width: 855px;
 		margin-left: auto;
 		text-align: right;
 		font-weight: 600;
-		font-size: clamp(24px, 3.4vw, 52px);
-		line-height: 1.4;
+		font-size: clamp(24px, 3vw, 52px);
+		line-height: 1.55;
 		text-shadow: 0 3px 13px rgba(255, 255, 255, 0.85);
+	}
+
+	.h-phone {
+		display: none;
 	}
 
 	.cards {
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-start;
-		gap: clamp(24px, 3.3vw, 50px);
-		margin-top: clamp(40px, 4.6vw, 70px);
+		gap: 26px;
+		margin-top: clamp(28px, 3.5vw, 54px);
 	}
 
 	.card {
-		flex: 0 1 433px;
+		flex: 0 1 366px;
 		min-width: 0;
 	}
 
-	.card.doer {
-		margin-top: 120px;
-	}
-
-	/* Pull the waves up so the cards dip into them and the colors (plus the
-	   astronaut sinking in) are visible on the first screenful of large displays */
+	/* Cards dip into the waves */
 	.space-cards {
-		margin-bottom: -300px;
+		margin-bottom: clamp(-90px, -4vw, -30px);
 	}
 
-	/* Astronaut spans from the hero down into the waves; z-index 3 tucks him
-	   between the light-pink (2) and dark-pink (4) wave layers */
+	/* Astronaut spans from below the nav down into the waves; z-index 4
+	   tucks him between the light-pink (3) and dark-pink (5) wave layers */
 	.astronaut {
 		position: absolute;
-		z-index: 3;
-		top: calc(var(--nav-height) + 34px);
-		left: max(3vw, calc(50vw - var(--content-max) / 2));
-		width: min(28vw, 350px);
-		aspect-ratio: 599 / 1591;
-		overflow: hidden;
-		transform: rotate(0.54deg);
+		z-index: 4;
+		top: var(--nav-height);
+		left: max(calc(50vw - 760px), -6vw);
+		width: clamp(560px, 63vw, 800px);
+		aspect-ratio: 2 / 3;
 		pointer-events: none;
 	}
 
 	.astronaut img {
-		position: absolute;
-		max-width: none;
-		width: 156.9%;
-		height: 101.86%;
-		left: -27.15%;
-		top: 0;
-		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 
 	/* ------------------------------------------------------------ ocean */
@@ -165,58 +164,86 @@
 
 	h2 {
 		font-weight: 600;
-		font-size: clamp(30px, 3.2vw, 48px);
-		line-height: 1.35;
+		font-size: clamp(30px, 3.2vw, 56px);
+		line-height: 1.4;
 		text-shadow: 0 3px 13px rgba(255, 255, 255, 0.85);
-		margin-bottom: clamp(36px, 5vw, 90px);
+		margin-bottom: clamp(36px, 5vw, 80px);
 	}
 
-	/* ------------------------------------------------------- responsive */
-	@media (max-width: 900px) {
+	/* ---------------------------------------------- tablet (601–1100px) */
+	@media (max-width: 1100px) and (min-width: 601px) {
+		/* Cards stack in a right-hand column beside the astronaut */
+		.cards {
+			flex-direction: column;
+			align-items: flex-end;
+			gap: 18px;
+			margin-top: clamp(20px, 3vw, 40px);
+		}
+
+		.card {
+			flex-basis: auto;
+			width: min(366px, 52vw);
+		}
+
+		.astronaut {
+			left: -6vw;
+			width: clamp(420px, 66vw, 620px);
+		}
+
+		.space-cards {
+			margin-bottom: -160px;
+		}
+
+		h1 {
+			max-width: 62vw;
+			font-size: clamp(26px, 3.9vw, 38px);
+		}
+	}
+
+	/* -------------------------------------------------- phone (≤600px) */
+	@media (max-width: 600px) {
 		.space-head {
-			padding-top: calc(var(--nav-height) + 44px);
+			padding-top: calc(var(--nav-height) + 40px);
 		}
 
 		h1 {
 			text-align: center;
 			margin: 0 auto;
-			max-width: 22em;
+			max-width: 20em;
+		}
+
+		.h-desktop {
+			display: none;
+		}
+
+		.h-phone {
+			display: inline;
 		}
 
 		/* Astronaut joins the normal flow between headline and cards */
 		.astronaut {
 			position: relative;
-			z-index: 0;
+			z-index: 4;
 			top: auto;
 			left: auto;
-			width: min(304px, 72vw);
-			aspect-ratio: 10 / 17;
-			margin: 28px 0 0 8%;
-		}
-
-		.astronaut img {
-			width: 151%;
-			height: 155.25%;
-			left: -26.1%;
-			top: -10.4%;
+			width: min(300px, 66vw);
+			margin: 20px auto 0;
 		}
 
 		.cards {
 			flex-direction: column;
 			align-items: stretch;
-			gap: 32px;
-			/* Cards overlap the astronaut's lower half like the mobile mock */
-			margin-top: -70px;
+			gap: 28px;
+			margin-top: 12px;
 		}
 
-		.card,
-		.card.doer {
-			margin-top: 0;
+		.card {
 			flex-basis: auto;
+			width: 100%;
 		}
 
 		.space-cards {
-			margin-bottom: -60px;
+			margin-bottom: -50px;
 		}
 
 		h2 {

@@ -9,8 +9,18 @@
 	let selected = $state(0);
 	let paused = $state(false);
 	let page = $state(0);
+	let expanded = $state(false);
 
 	const project = $derived(projects[selected]);
+
+	// Truncate long descriptions at a word boundary; READ MORE expands inline
+	const TRUNCATE_AT = 220;
+	const needsTruncation = $derived(project.description.length > TRUNCATE_AT + 40);
+	const shortDescription = $derived(
+		needsTruncation
+			? project.description.slice(0, project.description.lastIndexOf(' ', TRUNCATE_AT))
+			: project.description
+	);
 	const pageCount = $derived(Math.ceil(projects.length / PAGE_SIZE));
 	const visible = $derived(projects.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE));
 
@@ -18,6 +28,7 @@
 	function select(index) {
 		selected = index;
 		page = Math.floor(index / PAGE_SIZE);
+		expanded = false;
 		restart();
 	}
 
@@ -57,7 +68,17 @@
 				<h3>{project.title}</h3>
 				<p class="meta"><strong>Role:</strong> {project.role}</p>
 				<p class="meta"><strong>Tools:</strong> {project.tools}</p>
-				<p class="description">{project.description}</p>
+				<p class="description">
+					{#if needsTruncation && !expanded}
+						{shortDescription}
+						<button class="read-more" onclick={() => (expanded = true)}>READ MORE....</button>
+					{:else}
+						{project.description}
+						{#if needsTruncation}
+							<button class="read-more" onclick={() => (expanded = false)}>SHOW LESS</button>
+						{/if}
+					{/if}
+				</p>
 			</div>
 			<div class="image">
 				<img src={asset(project.image)} alt="Screenshot of {project.title}" />
@@ -119,13 +140,13 @@
 
 	.meta {
 		margin: 0;
-		font-size: clamp(15px, 1.5vw, 24px);
+		font-size: clamp(15px, 1.4vw, 21px);
 		line-height: 1.5;
 	}
 
 	.description {
 		margin: 1.2em 0 0;
-		font-size: clamp(15px, 1.5vw, 24px);
+		font-size: clamp(15px, 1.4vw, 21px);
 		line-height: 1.45;
 	}
 
@@ -149,28 +170,41 @@
 	.thumb {
 		display: block;
 		width: 100%;
-		border-radius: 6px;
-		opacity: 0.7;
+		border-radius: 5px;
+		box-shadow: 0 7px 4.2px -5px #000;
 		transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 	}
 
 	.thumb img {
 		width: 100%;
-		aspect-ratio: 260 / 204;
+		aspect-ratio: 268 / 210;
 		object-fit: cover;
 		object-position: top;
-		border-radius: 6px;
+		border-radius: 5px;
 	}
 
 	.thumb:hover,
 	.thumb:focus-visible {
-		opacity: 1;
 		transform: translateY(-4px);
+		box-shadow: 0 14px 10px -6px rgba(0, 0, 0, 0.7);
 	}
 
+	/* The currently featured project dims, like in the mock */
 	.thumb.active {
-		opacity: 1;
-		box-shadow: 0 0 0 3px var(--c-pink), 0 0 24px rgba(252, 55, 112, 0.5);
+		opacity: 0.5;
+		box-shadow: 0 21px 5.2px -5px #000;
+	}
+
+	.read-more {
+		font: inherit;
+		font-weight: 700;
+		color: inherit;
+		white-space: nowrap;
+	}
+
+	.read-more:hover,
+	.read-more:focus-visible {
+		color: var(--c-pink);
 	}
 
 	.pager {

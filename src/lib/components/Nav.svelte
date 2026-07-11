@@ -17,7 +17,7 @@
 <header class="nav">
 	<div class="nav-inner">
 		<a class="logo" href={resolve('/')} aria-label="The Doer of Stuff — home">
-			<img src={asset('/images/do-logo.svg')} alt="" width="42" height="26" />
+			<img src={asset('/images/do-logo.svg')} alt="" width="52" height="32" />
 		</a>
 
 		<button
@@ -58,10 +58,10 @@
 		right: 0;
 		z-index: 100;
 		height: var(--nav-height);
-		background: rgba(8, 20, 32, 0.55);
+		background: rgba(25, 36, 49, 0.2);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
-		border-bottom: 7px solid var(--c-accent);
+		border-bottom: 10px solid var(--c-accent);
 		box-shadow: 0 2px 1px 0 #93002b;
 	}
 
@@ -77,7 +77,7 @@
 	}
 
 	.logo img {
-		height: 30px;
+		height: 32px;
 		width: auto;
 		filter: drop-shadow(0 2px 1px #93002b);
 	}
@@ -111,7 +111,7 @@
 
 	.menu {
 		position: absolute;
-		top: calc(100% + 7px);
+		top: calc(100% + 10px);
 		right: var(--gutter);
 		min-width: 240px;
 		background: var(--c-card-solid);

@@ -27,10 +27,10 @@
 		</h3>
 		{#if canSpeak}
 			<button class="speaker" onclick={speak} aria-label="Pronounce “{word}”">
-				<img src="{asset('/images/speaker-1.svg')}" alt="" width="34" height="29" />
+				<img src="{asset('/images/speaker-1.svg')}" alt="" width="26" height="24" />
 			</button>
 		{:else}
-			<img class="speaker-static" src="{asset('/images/speaker-1.svg')}" alt="" width="34" height="29" />
+			<img class="speaker-static" src="{asset('/images/speaker-1.svg')}" alt="" width="26" height="24" />
 		{/if}
 	</header>
 
@@ -42,12 +42,12 @@
 <style>
 	.card {
 		position: relative;
-		width: min(433px, 100%);
-		padding: clamp(28px, 3.5vw, 50px) clamp(24px, 3.7vw, 53px) clamp(30px, 3.5vw, 48px);
+		width: min(366px, 100%);
+		padding: clamp(20px, 2vw, 26px) clamp(22px, 2.4vw, 31px) clamp(24px, 2.4vw, 30px);
 		background: var(--c-card);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
-		border-bottom: 15px solid var(--c-accent);
+		border-bottom: 10px solid var(--c-accent);
 		border-radius: 5px 5px 0 0;
 		box-shadow: -10px 50px 80px 0 rgba(8, 20, 32, 0.3);
 	}
@@ -57,14 +57,14 @@
 		align-items: flex-start;
 		justify-content: space-between;
 		gap: 16px;
-		margin-bottom: clamp(14px, 2vw, 28px);
+		margin-bottom: clamp(12px, 1.6vw, 22px);
 	}
 
 	h3 {
 		font-family: var(--font-body);
 		font-weight: 700;
-		font-size: clamp(24px, 2.3vw, 33px);
-		line-height: 1.25;
+		font-size: clamp(24px, 2vw, 28px);
+		line-height: 1.15;
 		color: #fff;
 		display: flex;
 		flex-direction: column;
@@ -87,7 +87,7 @@
 	}
 
 	.definition {
-		font-size: clamp(14px, 1.25vw, 18px);
+		font-size: clamp(14px, 1.15vw, 16px);
 		line-height: 1.45;
 		color: var(--c-text);
 	}

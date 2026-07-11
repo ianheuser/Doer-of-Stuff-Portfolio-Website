@@ -4,7 +4,7 @@
 
 <footer>
 	<a href={resolve('/')} aria-label="The Doer of Stuff — back to top">
-		<img src={asset('/images/do-logo.svg')} alt="" width="42" height="26" />
+		<img src={asset('/images/do-logo.svg')} alt="" width="71" height="44" />
 	</a>
 	<p>©2026 The Doer of Stuff</p>
 </footer>

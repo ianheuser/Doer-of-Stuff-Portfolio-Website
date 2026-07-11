@@ -18,7 +18,7 @@
 
 	const particles = Array.from({ length: count }, () => {
 		if (variant === 'bubbles') {
-			const size = rand(4, 40);
+			const size = rand(6, 56);
 			// Bigger bubbles read as "closer", so let them move a touch faster
 			const duration = rand(38, 75) - size * 0.35;
 			return {

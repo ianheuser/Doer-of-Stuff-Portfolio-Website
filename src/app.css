@@ -22,8 +22,8 @@
 
 	/* Layout */
 	--nav-height: 86px;
-	--content-max: 1240px;
-	--gutter: clamp(20px, 4vw, 72px);
+	--content-max: 1248px;
+	--gutter: clamp(20px, 5.6vw, 80px);
 }
 
 *,
