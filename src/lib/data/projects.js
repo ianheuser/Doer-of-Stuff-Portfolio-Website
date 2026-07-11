@@ -1,100 +1,114 @@
 /**
  * Recent and Notable Stuff.
  *
- * The first entry is real (from the Figma mock). The rest are placeholders —
- * swap in your actual projects, images, and copy. Images live in /static/images.
+ * Roles and tools come from your Behance projects. Descriptions marked TODO
+ * need your voice — the BMS Cost Calculator copy is from the Figma mock.
+ *
+ * Web-optimized images live in /static/images/projects/ (featured = the
+ * project's image_01, thumb = its Behance cover). The full originals for
+ * every project — including per-project image_NN sets for a future
+ * click-through gallery — are in /design-assets-originals/<folder>/, with
+ * manifest.json mapping folders to titles and image lists.
  *
  * @typedef {Object} Project
- * @property {string} id
+ * @property {string} id      Matches the folder name in design-assets-originals
  * @property {string} title
  * @property {string} role
  * @property {string} tools
  * @property {string} description
- * @property {string} image  Large featured image
- * @property {string} thumb  Thumbnail image
+ * @property {string} image   Large featured image
+ * @property {string} thumb   Thumbnail image
+ * @property {string} behance Link to the Behance gallery
  */
 
 /** @type {Project[]} */
 export const projects = [
 	{
-		id: 'clinical-trial-savings-calculator',
-		title: 'Clinical Trial Savings Calculator',
-		role: 'Designer and Developer',
-		tools: 'Adobe Illustrator, Adobe Flash, ActionScript',
+		id: 'bms-cost-calculator',
+		title: 'BMS Cost Calculator',
+		role: 'Sole Designer and Developer',
+		tools: 'Photoshop, Flash, ActionScript 2',
 		description:
 			'While at Biomedical Systems, our sales men and women had a series of calculations that they made inside of excel files to get ballpark estimations of how much their prospective clients could save if they ran their trials with us. My marketing director at the time came to me with the challenge of making an application that took in that same data, and presented graphs and charts, and was also something nice that the clients could see as well.',
-		image: '/images/project-calc-main.webp',
-		thumb: '/images/project-calc-main.webp'
+		image: '/images/projects/bms-cost-calculator.webp',
+		thumb: '/images/projects/bms-cost-calculator-thumb.webp',
+		behance: 'https://www.behance.net/gallery/8868925/BMS-Cost-Calculator'
 	},
-	// --- Placeholders below: replace with real projects -------------------
 	{
-		id: 'corporate-intranet',
-		title: 'Corporate Intranet Redesign',
-		role: 'UI Designer and Front End Developer',
-		tools: 'Figma, HTML, CSS, JavaScript',
+		id: 'knicks-kiosk',
+		title: 'Knicks Kiosk',
+		role: 'UI Designer and Flash Animator',
+		tools: 'Photoshop, Flash',
 		description:
-			'Placeholder — a full redesign of a corporate intranet, from stakeholder interviews and Figma mockups through a fully responsive front end build. Replace this copy with the real story.',
-		image: '/images/project-thumb-7.webp',
-		thumb: '/images/project-thumb-7.webp'
+			'TODO — an interactive touch screen kiosk experience built for the New York Knicks. Add the story: the client, the ask, and what you delivered.',
+		image: '/images/projects/knicks-kiosk.webp',
+		thumb: '/images/projects/knicks-kiosk-thumb.webp',
+		behance: 'https://www.behance.net/gallery/8868737/Knicks-Kiosk'
 	},
 	{
-		id: 'touchscreen-kiosk',
-		title: 'Touch Screen Kiosk Experience',
-		role: 'Interactive Designer and Developer',
-		tools: 'Photoshop, Illustrator, ActionScript',
+		id: 'rangers-kiosk',
+		title: 'Rangers Kiosk',
+		role: 'Designer and Flash Animator',
+		tools: 'Photoshop, Flash, ActionScript 2',
 		description:
-			'Placeholder — an interactive touch screen kiosk designed for walk-up use, with large tap targets, an attract loop, and a simple wayfinding flow. Replace this copy with the real story.',
-		image: '/images/project-thumb-11.webp',
-		thumb: '/images/project-thumb-11.webp'
+			'TODO — an interactive touch screen kiosk experience built for the New York Rangers. Add the story: the client, the ask, and what you delivered.',
+		image: '/images/projects/rangers-kiosk.webp',
+		thumb: '/images/projects/rangers-kiosk-thumb.webp',
+		behance: 'https://www.behance.net/gallery/8868765/Rangers-Kiosk'
 	},
 	{
-		id: 'elearning-platform',
-		title: 'eLearning Course Platform',
+		id: 'bms-virtual-tour',
+		title: 'BMS Virtual Tour',
 		role: 'Designer and Developer',
-		tools: 'Adobe Flash, ActionScript, Illustrator',
+		tools: 'Photoshop, Flash, ActionScript 2',
 		description:
-			'Placeholder — a series of interactive eLearning programs with animated lessons, quizzes, and progress tracking. Replace this copy with the real story.',
-		image: '/images/project-thumb-7.webp',
-		thumb: '/images/project-thumb-7.webp'
+			'TODO — a virtual tour application for Biomedical Systems. Add the story.',
+		image: '/images/projects/bms-virtual-tour.webp',
+		thumb: '/images/projects/bms-virtual-tour-thumb.webp',
+		behance: 'https://www.behance.net/gallery/8874367/BMS-Virtual-Tour'
 	},
 	{
-		id: 'marketing-website',
-		title: 'Forward Facing Marketing Website',
-		role: 'Full Stack Developer',
-		tools: 'Svelte, SvelteKit, Node',
+		id: 'medical-clinics-100',
+		title: 'Medical Clinics 100',
+		role: 'Designer and Front-End Developer',
+		tools: 'Photoshop, Illustrator, Coda',
 		description:
-			'Placeholder — a fully responsive marketing website built in SvelteKit, connected to backend APIs, with a CMS-driven content model. Replace this copy with the real story.',
-		image: '/images/project-thumb-11.webp',
-		thumb: '/images/project-thumb-11.webp'
+			'TODO — a responsive website for a network of medical clinics. Add the story.',
+		image: '/images/projects/medical-clinics-100.webp',
+		thumb: '/images/projects/medical-clinics-100-thumb.webp',
+		behance: 'https://www.behance.net/gallery/36286247/Medical-Clinics-100'
 	},
 	{
-		id: 'data-dashboard',
-		title: 'Enterprise Data Dashboard',
-		role: 'Front End Developer',
-		tools: 'JavaScript, DataTables.js, jQuery, T-SQL',
+		id: 'ipad-web-app',
+		title: 'iPad Web App',
+		role: 'UI Designer and Front End Developer',
+		tools: 'HTML, CSS, jQuery, Photoshop',
 		description:
-			'Placeholder — a dense, filterable reporting dashboard handling large datasets with server-side processing. Replace this copy with the real story.',
-		image: '/images/project-calc-main.webp',
-		thumb: '/images/project-calc-main.webp'
+			'TODO — a touch-first web application designed and built for the iPad. Add the story.',
+		image: '/images/projects/ipad-web-app.webp',
+		thumb: '/images/projects/ipad-web-app-thumb.webp',
+		behance: 'https://www.behance.net/gallery/8863841/iPAD-Web-App'
 	},
 	{
-		id: 'brand-identity',
-		title: 'Brand Identity & Logo Suite',
-		role: 'Graphic Designer',
-		tools: 'Illustrator, Photoshop',
+		id: 'masterkey-interactive-flash-presentation',
+		title: 'Masterkey Interactive Sales Presentation',
+		role: 'Art Director, Graphic Designer, Animator, Developer',
+		tools: 'Photoshop, Flash',
 		description:
-			'Placeholder — a full identity package: logo, business cards, stationery, and brand guidelines. Replace this copy with the real story.',
-		image: '/images/project-thumb-7.webp',
-		thumb: '/images/project-thumb-7.webp'
+			'TODO — an interactive Flash sales presentation for Masterkey. Add the story.',
+		image: '/images/projects/masterkey-interactive-flash-presentation.webp',
+		thumb: '/images/projects/masterkey-interactive-flash-presentation-thumb.webp',
+		behance: 'https://www.behance.net/gallery/36289453/Masterkey-Interactive-Flash-Presentation'
 	},
 	{
-		id: 'ai-prototype',
-		title: 'AI Assisted Rapid Prototype',
-		role: 'Designer and Prompt Engineer',
-		tools: 'MidJourney, Framer, Figma',
+		id: 'vertegy-consultants-website',
+		title: 'Vertegy Consultants Website',
+		role: 'Sole Designer and Front-End Developer',
+		tools: 'Photoshop, jQuery, HTML, CSS',
 		description:
-			'Placeholder — a concept-to-clickable prototype built in days using AI-assisted asset generation and rapid iteration. Replace this copy with the real story.',
-		image: '/images/project-thumb-11.webp',
-		thumb: '/images/project-thumb-11.webp'
+			'TODO — the full design and front end build of the Vertegy Consultants website. Add the story.',
+		image: '/images/projects/vertegy-consultants-website.webp',
+		thumb: '/images/projects/vertegy-consultants-website-thumb.webp',
+		behance: 'https://www.behance.net/gallery/13797729/Vertegy-Consultants-Website'
 	}
 ];

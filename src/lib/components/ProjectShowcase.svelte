@@ -4,15 +4,20 @@
 	import { projects } from '$lib/data/projects.js';
 
 	const CYCLE_MS = 8000;
+	const PAGE_SIZE = 8; // thumbnails shown at a time (two rows of four)
 
 	let selected = $state(0);
 	let paused = $state(false);
+	let page = $state(0);
 
 	const project = $derived(projects[selected]);
+	const pageCount = $derived(Math.ceil(projects.length / PAGE_SIZE));
+	const visible = $derived(projects.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE));
 
 	/** @param {number} index */
 	function select(index) {
 		selected = index;
+		page = Math.floor(index / PAGE_SIZE);
 		restart();
 	}
 
@@ -25,7 +30,10 @@
 		if (typeof window === 'undefined') return;
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 		timer = setInterval(() => {
-			if (!paused) selected = (selected + 1) % projects.length;
+			if (!paused) {
+				selected = (selected + 1) % projects.length;
+				page = Math.floor(selected / PAGE_SIZE);
+			}
 		}, CYCLE_MS);
 	}
 
@@ -57,9 +65,10 @@
 		</article>
 	{/key}
 
-	<!-- All projects, two rows of four -->
+	<!-- Thumbnails, two rows of four, paged when there are more than 8 -->
 	<ul class="thumbs">
-		{#each projects as p, index (p.id)}
+		{#each visible as p, i (p.id)}
+			{@const index = page * PAGE_SIZE + i}
 			<li>
 				<button
 					class="thumb"
@@ -73,6 +82,21 @@
 			</li>
 		{/each}
 	</ul>
+
+	{#if pageCount > 1}
+		<div class="pager" role="tablist" aria-label="More projects">
+			{#each Array(pageCount) as _, i}
+				<button
+					class="dot"
+					class:active={i === page}
+					onclick={() => (page = i)}
+					aria-label="Projects page {i + 1} of {pageCount}"
+					aria-selected={i === page}
+					role="tab"
+				></button>
+			{/each}
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -147,6 +171,33 @@
 	.thumb.active {
 		opacity: 1;
 		box-shadow: 0 0 0 3px var(--c-pink), 0 0 24px rgba(252, 55, 112, 0.5);
+	}
+
+	.pager {
+		display: flex;
+		justify-content: center;
+		gap: 14px;
+		margin-top: 28px;
+	}
+
+	.dot {
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.25);
+		border: 2px solid rgba(255, 255, 255, 0.5);
+		transition: background 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.dot:hover,
+	.dot:focus-visible {
+		box-shadow: 0 0 17px rgba(255, 255, 255, 0.9);
+	}
+
+	.dot.active {
+		background: var(--c-pink);
+		border-color: var(--c-pink);
+		box-shadow: 0 0 12px rgba(252, 55, 112, 0.7);
 	}
 
 	@media (max-width: 820px) {
