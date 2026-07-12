@@ -42,7 +42,6 @@
 <style>
 	.card {
 		position: relative;
-		width: min(366px, 100%);
 		padding: clamp(20px, 2vw, 26px) clamp(22px, 2.4vw, 31px) clamp(24px, 2.4vw, 30px);
 		background: var(--c-card);
 		backdrop-filter: blur(10px);

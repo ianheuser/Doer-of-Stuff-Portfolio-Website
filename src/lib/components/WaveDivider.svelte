@@ -57,6 +57,10 @@
 		height: calc(var(--crest-h) * 2.06);
 	}
 
+	.waves .layer {
+		filter: drop-shadow(0px -3px 5px rgba(0, 0, 0, 0.5));
+	}
+
 	.layer {
 		position: absolute;
 		left: 0;
