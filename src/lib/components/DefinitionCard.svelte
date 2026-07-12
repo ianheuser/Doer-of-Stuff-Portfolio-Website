@@ -27,7 +27,7 @@
 		</h3>
 		{#if canSpeak}
 			<button class="speaker" onclick={speak} aria-label="Pronounce “{word}”">
-				<img src="{asset('/images/speaker-1.svg')}" alt="" width="26" height="24" />
+				<img src="{asset('/images/speaker-1.svg')}" alt="Speaker Icon" width="26" height="24" />
 			</button>
 		{:else}
 			<img class="speaker-static" src="{asset('/images/speaker-1.svg')}" alt="" width="26" height="24" />
@@ -84,6 +84,7 @@
 	.speaker-static {
 		flex-shrink: 0;
 		margin-top: 6px;
+		opacity: 0.3;
 	}
 
 	.definition {

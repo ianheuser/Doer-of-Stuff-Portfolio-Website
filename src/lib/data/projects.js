@@ -1,27 +1,17 @@
-/**
- * Recent and Notable Stuff.
- *
- * Roles and tools come from your Behance projects. Descriptions marked TODO
- * need your voice — the BMS Cost Calculator copy is from the Figma mock.
- *
- * Web-optimized images live in /static/images/projects/ (featured = the
- * project's image_01, thumb = its Behance cover). The full originals for
- * every project — including per-project image_NN sets for a future
- * click-through gallery — are in /design-assets-originals/<folder>/, with
- * manifest.json mapping folders to titles and image lists.
- *
- * @typedef {Object} Project
- * @property {string} id      Matches the folder name in design-assets-originals
- * @property {string} title
- * @property {string} role
- * @property {string} tools
- * @property {string} description
- * @property {string} image   Large featured image
- * @property {string} thumb   Thumbnail image
- * @property {string} behance Link to the Behance gallery
+/** 
+	@typedef {Object} Project
+	@property {string} id      Matches the folder name in design-assets-originals
+	@property {string} title
+	@property {string} role
+	@property {string} tools
+	@property {string} description
+	@property {string} image   Large featured image
+	@property {string} thumb   Thumbnail image
+	@property {string} behance Link to the Behance gallery
+	@type {Project[]}
  */
 
-/** @type {Project[]} */
+
 export const projects = [
 	{
 		id: 'bms-cost-calculator',

@@ -1,6 +1,6 @@
 <script>
 	import { asset } from '$app/paths';
-	import Nav from '$lib/components/Nav.svelte';
+	import Header from '$lib/components/Header.svelte';
 	import ParticleField from '$lib/components/ParticleField.svelte';
 	import DefinitionCard from '$lib/components/DefinitionCard.svelte';
 	import WaveDivider from '$lib/components/WaveDivider.svelte';
@@ -9,10 +9,10 @@
 </script>
 
 <svelte:head>
-	<title>The Doer of Stuff — Ian McCarthy</title>
+	<title>Web Portfolio - The Doer of Stuff</title>
 </svelte:head>
 
-<Nav />
+<Header />
 
 <main>
 	<!-- ============ SPACE: hero, definition cards, astronaut ============ -->
