@@ -232,14 +232,22 @@
 			display: inline;
 		}
 
-		/* Astronaut joins the normal flow between headline and cards */
+		/* Astronaut joins the normal flow between headline and cards. He's
+		   clipped at the hips (overflow + fixed height) and the cut edge is
+		   tucked behind the doer card (z-index 7 on .space-cards beats his 4) */
 		.astronaut {
 			position: relative;
 			z-index: 4;
 			top: auto;
 			left: auto;
-			width: min(300px, 66vw);
-			margin: 20px auto 0;
+			width: min(380px, 85vw);
+			height: calc(min(380px, 85vw) * 0.98);
+			overflow: hidden;
+			margin: 12px auto -30px;
+		}
+
+		.astronaut img {
+			height: auto;
 		}
 
 		.cards {

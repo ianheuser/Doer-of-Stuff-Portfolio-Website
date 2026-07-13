@@ -14,17 +14,23 @@
 	/** @type {HTMLDialogElement} */
 	let dialog;
 	let selected = $state(null);
+	let activeImage = $state(0);
 
 	/** @param {(typeof allProjects)[number]} project */
 	function open(project) {
 		selected = project;
+		activeImage = 0;
 		dialog.showModal();
+		// Compensate for the vanishing scrollbar so the page doesn't shift
+		const scrollbar = window.innerWidth - document.documentElement.clientWidth;
 		document.body.style.overflow = 'hidden';
+		document.body.style.paddingRight = `${scrollbar}px`;
 	}
 
 	function onClose() {
 		selected = null;
 		document.body.style.overflow = '';
+		document.body.style.paddingRight = '';
 	}
 
 	function onDialogClick(e) {
@@ -36,9 +42,8 @@
 <ul class="grid">
 	{#each allProjects as project (project.id)}
 		<li>
-			<button class="tile" onclick={() => open(project)} aria-haspopup="dialog">
+			<button class="tile" onclick={() => open(project)} aria-haspopup="dialog" aria-label={project.title}>
 				<img src={asset(project.thumb)} alt="" loading="lazy" />
-				<span class="tile-title">{project.title}</span>
 			</button>
 		</li>
 	{/each}
@@ -54,7 +59,24 @@
 				</svg>
 			</button>
 
-			<img class="hero" src={asset(selected.image)} alt="Screenshot of {selected.title}" />
+			<img class="hero" src={asset(selected.images[activeImage])} alt="Screenshot of {selected.title}" />
+
+			{#if selected.images.length > 1}
+				<div class="filmstrip" role="tablist" aria-label="Project images">
+					{#each selected.images as image, i (image)}
+						<button
+							class="filmstrip-thumb"
+							class:active={i === activeImage}
+							role="tab"
+							aria-selected={i === activeImage}
+							aria-label="Image {i + 1} of {selected.images.length}"
+							onclick={() => (activeImage = i)}
+						>
+							<img src={asset(image)} alt="" loading="lazy" />
+						</button>
+					{/each}
+				</div>
+			{/if}
 
 			<div class="body">
 				<h3>{selected.title}</h3>
@@ -67,9 +89,6 @@
 				{#if selected.description && !selected.description.startsWith('TODO')}
 					<p class="description">{selected.description}</p>
 				{/if}
-				<a class="behance" href={selected.behance} target="_blank" rel="noopener noreferrer">
-					View on Behance
-				</a>
 			</div>
 		</article>
 	{/if}
@@ -81,8 +100,14 @@
 		margin: 0;
 		padding: 0;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(220px, 40vw), 1fr));
+		grid-template-columns: repeat(4, 1fr);
 		gap: clamp(14px, 2.4vw, 32px);
+	}
+
+	@media (max-width: 640px) {
+		.grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 
 	.tile {
@@ -103,17 +128,6 @@
 		transition: box-shadow 0.2s ease;
 	}
 
-	.tile-title {
-		display: block;
-		margin-top: 10px;
-		font-family: var(--font-body);
-		font-weight: 700;
-		font-size: 15px;
-		line-height: 1.3;
-		color: var(--c-text);
-		opacity: 0.85;
-	}
-
 	.tile:hover,
 	.tile:focus-visible {
 		transform: translateY(-4px);
@@ -132,7 +146,9 @@
 		border-bottom: 10px solid var(--c-accent);
 		background: var(--c-card-solid);
 		color: var(--c-text);
-		width: min(880px, calc(100vw - 32px));
+		/* 100% of the viewport excludes the scrollbar; 100vw does not and
+		   overflows to the right when classic scrollbars are visible */
+		width: min(880px, calc(100% - 32px));
 		max-height: calc(100vh - 64px);
 		box-shadow: -10px 50px 80px 0 rgba(8, 20, 32, 0.6);
 	}
@@ -180,10 +196,10 @@
 
 	.hero {
 		width: 100%;
-		max-height: 52vh;
-		object-fit: cover;
-		object-position: top;
+		height: 52vh;
+		object-fit: contain;
 		display: block;
+		background: rgba(0, 12, 24, 0.45);
 	}
 
 	.body {
@@ -211,24 +227,40 @@
 		line-height: 1.5;
 	}
 
-	.behance {
-		display: inline-block;
-		margin-top: 22px;
-		padding: 10px 22px;
-		font-family: var(--font-nunito);
-		font-weight: 700;
-		font-size: 15px;
-		color: #fff;
-		text-decoration: none;
-		border-radius: 100px;
-		background: var(--c-accent);
-		transition: background 0.2s ease, box-shadow 0.2s ease;
+	.filmstrip {
+		display: flex;
+		gap: 10px;
+		padding: 14px clamp(20px, 3.5vw, 40px) 0;
+		overflow-x: auto;
 	}
 
-	.behance:hover,
-	.behance:focus-visible {
-		background: var(--c-pink);
-		box-shadow: 0 0 17px rgba(252, 55, 112, 0.6);
+	.filmstrip-thumb {
+		flex: 0 0 auto;
+		width: 76px;
+		border-radius: 4px;
+		opacity: 0.55;
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+		transition: opacity 0.2s ease, outline-color 0.2s ease;
+	}
+
+	.filmstrip-thumb img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 4px;
+	}
+
+	.filmstrip-thumb:hover,
+	.filmstrip-thumb:focus-visible {
+		opacity: 1;
+	}
+
+	.filmstrip-thumb.active {
+		opacity: 1;
+		outline-color: var(--c-accent);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -6,13 +6,20 @@
  * Entries from projects.js (the curated 8) take precedence by id, so titles,
  * copy, and hand-picked images there win over the generated defaults.
  *
- * @type {import('./projects.js').Project[]}
+ * `order` controls the grid sort (lowest first) — edit freely; ties keep
+ * array order. Flip `archived` to true to hide a project from the site
+ * without deleting it. Gallery images come from project-images.js (generated).
+ *
+ * @type {(import('./projects.js').Project & { order: number, archived: boolean })[]}
  */
 import { projects as curated } from './projects.js';
+import { projectImages } from './project-images.js';
 
 const generated = [
   {
     "id": "accomplizt-logo",
+    "order": 1,
+    "archived": false,
     "title": "Accomplizt - Logo",
     "role": "Designer",
     "tools": "Illustrator",
@@ -23,6 +30,8 @@ const generated = [
   },
   {
     "id": "website-landing-page-mockup",
+    "order": 2,
+    "archived": false,
     "title": "Website Landing Page Mockup",
     "role": "",
     "tools": "",
@@ -33,6 +42,8 @@ const generated = [
   },
   {
     "id": "vertegy-consultants-website",
+    "order": 3,
+    "archived": false,
     "title": "Vertegy Consultants Website",
     "role": "Sole Designer and Front-End Developer",
     "tools": "Photoshop, jQuery, HTML, CSS",
@@ -43,6 +54,8 @@ const generated = [
   },
   {
     "id": "prime-lawn-care",
+    "order": 4,
+    "archived": false,
     "title": "Prime Lawn Care",
     "role": "",
     "tools": "Illustrator, Photoshop",
@@ -53,6 +66,8 @@ const generated = [
   },
   {
     "id": "dan-koch-industries",
+    "order": 5,
+    "archived": false,
     "title": "Dan Koch Industries",
     "role": "Art Director, Graphic Designer",
     "tools": "Illustrator",
@@ -63,6 +78,8 @@ const generated = [
   },
   {
     "id": "kelloggs-conference-logo",
+    "order": 6,
+    "archived": false,
     "title": "Kellogg's Conference Logo",
     "role": "",
     "tools": "",
@@ -73,6 +90,8 @@ const generated = [
   },
   {
     "id": "medical-clinics-100",
+    "order": 7,
+    "archived": false,
     "title": "Medical Clinics 100",
     "role": "Designer and Front-End Developer",
     "tools": "Photoshop, Illustrator, Coda",
@@ -83,6 +102,8 @@ const generated = [
   },
   {
     "id": "octopiano",
+    "order": 8,
+    "archived": true,
     "title": "OctoPiano",
     "role": "Painter and Illustrator",
     "tools": "Acrylic Paint, Photoshop, Illustrator",
@@ -93,6 +114,8 @@ const generated = [
   },
   {
     "id": "maddies-birthday-skull",
+    "order": 9,
+    "archived": true,
     "title": "Maddie's Birthday Skull",
     "role": "Painter",
     "tools": "WACOM Cintiq, Photoshop, Sketchbook Pro",
@@ -103,6 +126,8 @@ const generated = [
   },
   {
     "id": "dig-it-construction",
+    "order": 10,
+    "archived": true,
     "title": "Dig It Construction",
     "role": "Graphic Designer",
     "tools": "Photoshop",
@@ -113,6 +138,8 @@ const generated = [
   },
   {
     "id": "masterkey-interactive-flash-presentation",
+    "order": 11,
+    "archived": false,
     "title": "Masterkey Interactive Flash Presentation",
     "role": "Art Director, Graphic Designer, Animator, Developer",
     "tools": "Photoshop, Flash",
@@ -123,6 +150,8 @@ const generated = [
   },
   {
     "id": "masterkey-it-flash-presentation",
+    "order": 12,
+    "archived": false,
     "title": "Masterkey IT Flash Presentation",
     "role": "Art Director, Animator, Graphic Designer, Developer",
     "tools": "Photoshop, Flash",
@@ -133,6 +162,8 @@ const generated = [
   },
   {
     "id": "biomedical-systems-re-branding",
+    "order": 13,
+    "archived": false,
     "title": "Biomedical Systems Re-Branding",
     "role": "Art Director, Graphic Designer",
     "tools": "Photoshop, Illustrator",
@@ -143,6 +174,8 @@ const generated = [
   },
   {
     "id": "biomedical-systems-4-panel-brochure",
+    "order": 14,
+    "archived": false,
     "title": "Biomedical Systems 4 Panel Brochure",
     "role": "Graphic Designer Tool: Photoshop",
     "tools": "",
@@ -153,6 +186,8 @@ const generated = [
   },
   {
     "id": "biomedical-systems-modality-brochures",
+    "order": 15,
+    "archived": false,
     "title": "Biomedical Systems - Modality Brochures",
     "role": "Graphic Designer",
     "tools": "Illustrator, Photoshop",
@@ -163,6 +198,8 @@ const generated = [
   },
   {
     "id": "biomed-print",
+    "order": 16,
+    "archived": true,
     "title": "Biomed Print",
     "role": "",
     "tools": "",
@@ -173,6 +210,8 @@ const generated = [
   },
   {
     "id": "bionet-intranet-logo",
+    "order": 17,
+    "archived": false,
     "title": "BioNet Intranet Logo",
     "role": "",
     "tools": "",
@@ -183,6 +222,8 @@ const generated = [
   },
   {
     "id": "various-logos",
+    "order": 18,
+    "archived": false,
     "title": "Various Logos (COPY)",
     "role": "",
     "tools": "",
@@ -193,6 +234,8 @@ const generated = [
   },
   {
     "id": "digital-pathology-email-blast",
+    "order": 19,
+    "archived": false,
     "title": "Digital Pathology Email Blast",
     "role": "",
     "tools": "",
@@ -203,6 +246,8 @@ const generated = [
   },
   {
     "id": "ipad-web-app",
+    "order": 20,
+    "archived": false,
     "title": "iPAD Web App",
     "role": "UI Designer and Front End Developer",
     "tools": "HTML, CSS, jQuery, Photoshop",
@@ -213,6 +258,8 @@ const generated = [
   },
   {
     "id": "phish-fan-art",
+    "order": 21,
+    "archived": false,
     "title": "Phish Fan Art",
     "role": "Graphic/Digital Artist",
     "tools": "Photoshop",
@@ -223,6 +270,8 @@ const generated = [
   },
   {
     "id": "global-surgical-web-design",
+    "order": 22,
+    "archived": false,
     "title": "Global Surgical Web Design",
     "role": "Interface Designer",
     "tools": "Photoshop",
@@ -233,6 +282,8 @@ const generated = [
   },
   {
     "id": "elearning-interface-design",
+    "order": 23,
+    "archived": false,
     "title": "eLearning Interface Design",
     "role": "Interface Designer Company: Masterkey Interactive Tools Used: Photoshop",
     "tools": "",
@@ -243,6 +294,8 @@ const generated = [
   },
   {
     "id": "caboose-logo-and-website",
+    "order": 24,
+    "archived": false,
     "title": "Caboose Logo and Website",
     "role": "Sole Designer and Developer",
     "tools": "Photoshop, Flash, ActionScript 2",
@@ -253,6 +306,8 @@ const generated = [
   },
   {
     "id": "cricket-booth-interface",
+    "order": 25,
+    "archived": false,
     "title": "Cricket Booth Interface",
     "role": "Sole Designer, Flash Animator",
     "tools": "Photoshop, Flash",
@@ -263,6 +318,8 @@ const generated = [
   },
   {
     "id": "ecg-warehouse-website",
+    "order": 26,
+    "archived": false,
     "title": "ECG Warehouse Website",
     "role": "Sole Designer and Developer",
     "tools": "HTML, CSS, Flash, Web Matrix",
@@ -273,6 +330,8 @@ const generated = [
   },
   {
     "id": "knicks-kiosk",
+    "order": 27,
+    "archived": false,
     "title": "Knicks Kiosk",
     "role": "UI Designer and Flash Animator",
     "tools": "Photoshop, Flash",
@@ -283,6 +342,8 @@ const generated = [
   },
   {
     "id": "liberty-kiosk",
+    "order": 28,
+    "archived": false,
     "title": "Liberty Kiosk",
     "role": "Interface Designer",
     "tools": "Photoshop",
@@ -293,6 +354,8 @@ const generated = [
   },
   {
     "id": "mizner-elearning",
+    "order": 29,
+    "archived": false,
     "title": "Mizner eLearning",
     "role": "Interface Designer",
     "tools": "Photoshop",
@@ -303,6 +366,8 @@ const generated = [
   },
   {
     "id": "rangers-kiosk",
+    "order": 30,
+    "archived": false,
     "title": "Rangers Kiosk",
     "role": "Designer and Flash Animator",
     "tools": "Photoshop, Flash, ActionScript 2",
@@ -313,6 +378,8 @@ const generated = [
   },
   {
     "id": "masterkey-mock-ups",
+    "order": 31,
+    "archived": true,
     "title": "Masterkey Mock Ups",
     "role": "Interface Designer",
     "tools": "Photoshop",
@@ -323,6 +390,8 @@ const generated = [
   },
   {
     "id": "bms-trade-booth",
+    "order": 32,
+    "archived": false,
     "title": "BMS Trade Booth",
     "role": "Sole Designer",
     "tools": "Photoshop, Illustrator",
@@ -333,6 +402,8 @@ const generated = [
   },
   {
     "id": "truvue-hrs-campaign-tradeshow-booths",
+    "order": 33,
+    "archived": false,
     "title": "TruVue HRS Campaign Tradeshow Booths",
     "role": "Graphic Designer",
     "tools": "Illustrator, Photoshop",
@@ -343,6 +414,8 @@ const generated = [
   },
   {
     "id": "bms-cost-calculator",
+    "order": 34,
+    "archived": false,
     "title": "BMS Cost Calculator",
     "role": "Sole Designer and Developer",
     "tools": "Photoshop, Flash, Actionscript 2",
@@ -353,6 +426,8 @@ const generated = [
   },
   {
     "id": "truvue-microsite",
+    "order": 35,
+    "archived": false,
     "title": "TruVue Microsite",
     "role": "Sole Designer and Developer",
     "tools": "Photoshop, HTML, CSS, jQuery",
@@ -363,6 +438,8 @@ const generated = [
   },
   {
     "id": "bms-virtual-tour",
+    "order": 36,
+    "archived": false,
     "title": "BMS Virtual Tour",
     "role": "Designer and Developer",
     "tools": "Photoshop, Flash, ActionScript 2",
@@ -373,6 +450,8 @@ const generated = [
   },
   {
     "id": "elearning-interface",
+    "order": 37,
+    "archived": false,
     "title": "eLearning Interface",
     "role": "Designer",
     "tools": "Photoshop",
@@ -383,6 +462,8 @@ const generated = [
   },
   {
     "id": "responsive-design-mocks",
+    "order": 38,
+    "archived": false,
     "title": "Responsive Design Mocks",
     "role": "Designer and Front-End Developer",
     "tools": "Photoshop, Illustrator, Coda, HTML, CSS, JavaScript",
@@ -393,6 +474,8 @@ const generated = [
   },
   {
     "id": "bms-website",
+    "order": 39,
+    "archived": false,
     "title": "BMS Website",
     "role": "Sole Designer and Developer",
     "tools": "HTML, CSS, Joomla, jQuery, Photoshop",
@@ -403,6 +486,8 @@ const generated = [
   },
   {
     "id": "collinsfit-web",
+    "order": 40,
+    "archived": false,
     "title": "CollinsFit Web",
     "role": "Sole Designer and Developer",
     "tools": "HTML, CSS, jQuery, Wordpress, Photoshop",
@@ -413,6 +498,8 @@ const generated = [
   },
   {
     "id": "hance-construction",
+    "order": 41,
+    "archived": false,
     "title": "Hance Construction",
     "role": "Designer",
     "tools": "Illustrator",
@@ -423,6 +510,8 @@ const generated = [
   },
   {
     "id": "hrs-show-tickets",
+    "order": 42,
+    "archived": false,
     "title": "HRS Show Tickets",
     "role": "Designer",
     "tools": "Photoshop, Illustrator, InDesign",
@@ -433,6 +522,8 @@ const generated = [
   },
   {
     "id": "truvue-hrs-campaign-coasters",
+    "order": 43,
+    "archived": false,
     "title": "TruVue HRS Campaign Coasters",
     "role": "Designer",
     "tools": "Illustrator, Photoshop, InDesign",
@@ -443,6 +534,8 @@ const generated = [
   },
   {
     "id": "vector-art",
+    "order": 44,
+    "archived": true,
     "title": "Vector Art",
     "role": "Designer",
     "tools": "Illustrator",
@@ -453,6 +546,8 @@ const generated = [
   },
   {
     "id": "fan-art",
+    "order": 45,
+    "archived": true,
     "title": "Fan Art",
     "role": "Designer",
     "tools": "Illustrator",
@@ -463,6 +558,8 @@ const generated = [
   },
   {
     "id": "local-band-concept-art",
+    "order": 46,
+    "archived": true,
     "title": "Local Band Concept Art",
     "role": "Designer",
     "tools": "Illustrator, Photoshop",
@@ -473,6 +570,8 @@ const generated = [
   },
   {
     "id": "biomedical-system-responsive-design-mocks",
+    "order": 47,
+    "archived": false,
     "title": "Biomedical System Responsive Design Mocks",
     "role": "Designer",
     "tools": "Photoshop",
@@ -483,6 +582,8 @@ const generated = [
   },
   {
     "id": "gdms-web-application",
+    "order": 48,
+    "archived": false,
     "title": "GDMS Web Application",
     "role": "Interface Designer and Front-End Developer",
     "tools": "HTML, CSS, jQuery, Visual Studio",
@@ -493,6 +594,8 @@ const generated = [
   },
   {
     "id": "bms-flash-loop",
+    "order": 49,
+    "archived": false,
     "title": "BMS Flash Loop",
     "role": "Designer and Developer",
     "tools": "Photoshop, Flash, ActionScript 2",
@@ -503,6 +606,8 @@ const generated = [
   },
   {
     "id": "flash-training-module",
+    "order": 50,
+    "archived": false,
     "title": "Flash Training Module",
     "role": "Designer, Flash Developer",
     "tools": "Photoshop, Flash",
@@ -513,6 +618,8 @@ const generated = [
   },
   {
     "id": "data-app-design",
+    "order": 51,
+    "archived": false,
     "title": "Data App Design",
     "role": "Designer",
     "tools": "Photoshop",
@@ -523,6 +630,8 @@ const generated = [
   },
   {
     "id": "leed-consulting-firm-card",
+    "order": 52,
+    "archived": false,
     "title": "LEED Consulting Firm Card",
     "role": "Designer",
     "tools": "Photoshop",
@@ -533,6 +642,8 @@ const generated = [
   },
   {
     "id": "file-deployment-app",
+    "order": 53,
+    "archived": false,
     "title": "File Deployment App",
     "role": "Sole Designer/Front-End Developer",
     "tools": "Photoshop, HTML, CSS, jQuery, Visual Studio",
@@ -543,6 +654,8 @@ const generated = [
   },
   {
     "id": "cardiotracker-pm-app",
+    "order": 54,
+    "archived": false,
     "title": "CardioTracker PM App",
     "role": "Sole Designer/Front-End Developer",
     "tools": "Photoshop, HTML, CSS, jQuery, Visual Studio",
@@ -555,6 +668,8 @@ const generated = [
 
 const overrides = new Map(curated.map((p) => [p.id, p]));
 
-export const allProjects = generated.map((g) =>
-    overrides.has(g.id) ? { ...g, ...overrides.get(g.id) } : g
-);
+export const allProjects = generated
+    .filter((p) => !p.archived)
+    .map((g) => (overrides.has(g.id) ? { ...g, ...overrides.get(g.id) } : g))
+    .map((p) => ({ ...p, images: projectImages[p.id] ?? [p.image] }))
+    .sort((a, b) => a.order - b.order);
