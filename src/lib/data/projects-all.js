@@ -1,0 +1,560 @@
+/**
+ * Every Behance project, generated from design-assets-originals/manifest.json.
+ * Roles and tools come from each Behance project's description; descriptions
+ * are intentionally blank until written (curated entries below override).
+ *
+ * Entries from projects.js (the curated 8) take precedence by id, so titles,
+ * copy, and hand-picked images there win over the generated defaults.
+ *
+ * @type {import('./projects.js').Project[]}
+ */
+import { projects as curated } from './projects.js';
+
+const generated = [
+  {
+    "id": "accomplizt-logo",
+    "title": "Accomplizt - Logo",
+    "role": "Designer",
+    "tools": "Illustrator",
+    "description": "",
+    "image": "/images/projects/full/accomplizt-logo.webp",
+    "thumb": "/images/projects/thumbs/accomplizt-logo.webp",
+    "behance": "https://www.behance.net/gallery/137469151/Accomplizt-Logo"
+  },
+  {
+    "id": "website-landing-page-mockup",
+    "title": "Website Landing Page Mockup",
+    "role": "",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/website-landing-page-mockup.webp",
+    "thumb": "/images/projects/thumbs/website-landing-page-mockup.webp",
+    "behance": "https://www.behance.net/gallery/137470299/Website-Landing-Page-Mockup"
+  },
+  {
+    "id": "vertegy-consultants-website",
+    "title": "Vertegy Consultants Website",
+    "role": "Sole Designer and Front-End Developer",
+    "tools": "Photoshop, jQuery, HTML, CSS",
+    "description": "",
+    "image": "/images/projects/full/vertegy-consultants-website.webp",
+    "thumb": "/images/projects/thumbs/vertegy-consultants-website.webp",
+    "behance": "https://www.behance.net/gallery/13797729/Vertegy-Consultants-Website"
+  },
+  {
+    "id": "prime-lawn-care",
+    "title": "Prime Lawn Care",
+    "role": "",
+    "tools": "Illustrator, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/prime-lawn-care.webp",
+    "thumb": "/images/projects/thumbs/prime-lawn-care.webp",
+    "behance": "https://www.behance.net/gallery/36257843/Prime-Lawn-Care"
+  },
+  {
+    "id": "dan-koch-industries",
+    "title": "Dan Koch Industries",
+    "role": "Art Director, Graphic Designer",
+    "tools": "Illustrator",
+    "description": "",
+    "image": "/images/projects/full/dan-koch-industries.webp",
+    "thumb": "/images/projects/thumbs/dan-koch-industries.webp",
+    "behance": "https://www.behance.net/gallery/36258427/Dan-Koch-Industries"
+  },
+  {
+    "id": "kelloggs-conference-logo",
+    "title": "Kellogg's Conference Logo",
+    "role": "",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/kelloggs-conference-logo.webp",
+    "thumb": "/images/projects/thumbs/kelloggs-conference-logo.webp",
+    "behance": "https://www.behance.net/gallery/36258931/Kelloggs-Conference-Logo"
+  },
+  {
+    "id": "medical-clinics-100",
+    "title": "Medical Clinics 100",
+    "role": "Designer and Front-End Developer",
+    "tools": "Photoshop, Illustrator, Coda",
+    "description": "",
+    "image": "/images/projects/full/medical-clinics-100.webp",
+    "thumb": "/images/projects/thumbs/medical-clinics-100.webp",
+    "behance": "https://www.behance.net/gallery/36286247/Medical-Clinics-100"
+  },
+  {
+    "id": "octopiano",
+    "title": "OctoPiano",
+    "role": "Painter and Illustrator",
+    "tools": "Acrylic Paint, Photoshop, Illustrator",
+    "description": "",
+    "image": "/images/projects/full/octopiano.webp",
+    "thumb": "/images/projects/thumbs/octopiano.webp",
+    "behance": "https://www.behance.net/gallery/36286977/OctoPiano"
+  },
+  {
+    "id": "maddies-birthday-skull",
+    "title": "Maddie's Birthday Skull",
+    "role": "Painter",
+    "tools": "WACOM Cintiq, Photoshop, Sketchbook Pro",
+    "description": "",
+    "image": "/images/projects/full/maddies-birthday-skull.webp",
+    "thumb": "/images/projects/thumbs/maddies-birthday-skull.webp",
+    "behance": "https://www.behance.net/gallery/36287409/Maddies-Birthday-Skull"
+  },
+  {
+    "id": "dig-it-construction",
+    "title": "Dig It Construction",
+    "role": "Graphic Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/dig-it-construction.webp",
+    "thumb": "/images/projects/thumbs/dig-it-construction.webp",
+    "behance": "https://www.behance.net/gallery/36288249/Dig-It-Construction"
+  },
+  {
+    "id": "masterkey-interactive-flash-presentation",
+    "title": "Masterkey Interactive Flash Presentation",
+    "role": "Art Director, Graphic Designer, Animator, Developer",
+    "tools": "Photoshop, Flash",
+    "description": "",
+    "image": "/images/projects/full/masterkey-interactive-flash-presentation.webp",
+    "thumb": "/images/projects/thumbs/masterkey-interactive-flash-presentation.webp",
+    "behance": "https://www.behance.net/gallery/36289453/Masterkey-Interactive-Flash-Presentation"
+  },
+  {
+    "id": "masterkey-it-flash-presentation",
+    "title": "Masterkey IT Flash Presentation",
+    "role": "Art Director, Animator, Graphic Designer, Developer",
+    "tools": "Photoshop, Flash",
+    "description": "",
+    "image": "/images/projects/full/masterkey-it-flash-presentation.webp",
+    "thumb": "/images/projects/thumbs/masterkey-it-flash-presentation.webp",
+    "behance": "https://www.behance.net/gallery/36290817/Masterkey-IT-Flash-Presentation"
+  },
+  {
+    "id": "biomedical-systems-re-branding",
+    "title": "Biomedical Systems Re-Branding",
+    "role": "Art Director, Graphic Designer",
+    "tools": "Photoshop, Illustrator",
+    "description": "",
+    "image": "/images/projects/full/biomedical-systems-re-branding.webp",
+    "thumb": "/images/projects/thumbs/biomedical-systems-re-branding.webp",
+    "behance": "https://www.behance.net/gallery/36293107/Biomedical-Systems-Re-Branding"
+  },
+  {
+    "id": "biomedical-systems-4-panel-brochure",
+    "title": "Biomedical Systems 4 Panel Brochure",
+    "role": "Graphic Designer Tool: Photoshop",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/biomedical-systems-4-panel-brochure.webp",
+    "thumb": "/images/projects/thumbs/biomedical-systems-4-panel-brochure.webp",
+    "behance": "https://www.behance.net/gallery/36293417/Biomedical-Systems-4-Panel-Brochure"
+  },
+  {
+    "id": "biomedical-systems-modality-brochures",
+    "title": "Biomedical Systems - Modality Brochures",
+    "role": "Graphic Designer",
+    "tools": "Illustrator, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/biomedical-systems-modality-brochures.webp",
+    "thumb": "/images/projects/thumbs/biomedical-systems-modality-brochures.webp",
+    "behance": "https://www.behance.net/gallery/36294417/Biomedical-Systems-Modality-Brochures"
+  },
+  {
+    "id": "biomed-print",
+    "title": "Biomed Print",
+    "role": "",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/biomed-print.webp",
+    "thumb": "/images/projects/thumbs/biomed-print.webp",
+    "behance": "https://www.behance.net/gallery/52714121/Biomed-Print"
+  },
+  {
+    "id": "bionet-intranet-logo",
+    "title": "BioNet Intranet Logo",
+    "role": "",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/bionet-intranet-logo.webp",
+    "thumb": "/images/projects/thumbs/bionet-intranet-logo.webp",
+    "behance": "https://www.behance.net/gallery/74168051/BioNet-Intranet-Logo"
+  },
+  {
+    "id": "various-logos",
+    "title": "Various Logos (COPY)",
+    "role": "",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/various-logos.webp",
+    "thumb": "/images/projects/thumbs/various-logos.webp",
+    "behance": "https://www.behance.net/gallery/74168285/Various-Logos-(COPY)"
+  },
+  {
+    "id": "digital-pathology-email-blast",
+    "title": "Digital Pathology Email Blast",
+    "role": "",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/digital-pathology-email-blast.webp",
+    "thumb": "/images/projects/thumbs/digital-pathology-email-blast.webp",
+    "behance": "https://www.behance.net/gallery/79640915/Digital-Pathology-Email-Blast"
+  },
+  {
+    "id": "ipad-web-app",
+    "title": "iPAD Web App",
+    "role": "UI Designer and Front End Developer",
+    "tools": "HTML, CSS, jQuery, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/ipad-web-app.webp",
+    "thumb": "/images/projects/thumbs/ipad-web-app.webp",
+    "behance": "https://www.behance.net/gallery/8863841/iPAD-Web-App"
+  },
+  {
+    "id": "phish-fan-art",
+    "title": "Phish Fan Art",
+    "role": "Graphic/Digital Artist",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/phish-fan-art.webp",
+    "thumb": "/images/projects/thumbs/phish-fan-art.webp",
+    "behance": "https://www.behance.net/gallery/8866419/Phish-Fan-Art"
+  },
+  {
+    "id": "global-surgical-web-design",
+    "title": "Global Surgical Web Design",
+    "role": "Interface Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/global-surgical-web-design.webp",
+    "thumb": "/images/projects/thumbs/global-surgical-web-design.webp",
+    "behance": "https://www.behance.net/gallery/8866731/Global-Surgical-Web-Design"
+  },
+  {
+    "id": "elearning-interface-design",
+    "title": "eLearning Interface Design",
+    "role": "Interface Designer Company: Masterkey Interactive Tools Used: Photoshop",
+    "tools": "",
+    "description": "",
+    "image": "/images/projects/full/elearning-interface-design.webp",
+    "thumb": "/images/projects/thumbs/elearning-interface-design.webp",
+    "behance": "https://www.behance.net/gallery/8867019/eLearning-Interface-Design"
+  },
+  {
+    "id": "caboose-logo-and-website",
+    "title": "Caboose Logo and Website",
+    "role": "Sole Designer and Developer",
+    "tools": "Photoshop, Flash, ActionScript 2",
+    "description": "",
+    "image": "/images/projects/full/caboose-logo-and-website.webp",
+    "thumb": "/images/projects/thumbs/caboose-logo-and-website.webp",
+    "behance": "https://www.behance.net/gallery/8867319/Caboose-Logo-and-Website"
+  },
+  {
+    "id": "cricket-booth-interface",
+    "title": "Cricket Booth Interface",
+    "role": "Sole Designer, Flash Animator",
+    "tools": "Photoshop, Flash",
+    "description": "",
+    "image": "/images/projects/full/cricket-booth-interface.webp",
+    "thumb": "/images/projects/thumbs/cricket-booth-interface.webp",
+    "behance": "https://www.behance.net/gallery/8867579/Cricket-Booth-Interface"
+  },
+  {
+    "id": "ecg-warehouse-website",
+    "title": "ECG Warehouse Website",
+    "role": "Sole Designer and Developer",
+    "tools": "HTML, CSS, Flash, Web Matrix",
+    "description": "",
+    "image": "/images/projects/full/ecg-warehouse-website.webp",
+    "thumb": "/images/projects/thumbs/ecg-warehouse-website.webp",
+    "behance": "https://www.behance.net/gallery/8868581/ECG-Warehouse-Website"
+  },
+  {
+    "id": "knicks-kiosk",
+    "title": "Knicks Kiosk",
+    "role": "UI Designer and Flash Animator",
+    "tools": "Photoshop, Flash",
+    "description": "",
+    "image": "/images/projects/full/knicks-kiosk.webp",
+    "thumb": "/images/projects/thumbs/knicks-kiosk.webp",
+    "behance": "https://www.behance.net/gallery/8868737/Knicks-Kiosk"
+  },
+  {
+    "id": "liberty-kiosk",
+    "title": "Liberty Kiosk",
+    "role": "Interface Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/liberty-kiosk.webp",
+    "thumb": "/images/projects/thumbs/liberty-kiosk.webp",
+    "behance": "https://www.behance.net/gallery/8868743/Liberty-Kiosk"
+  },
+  {
+    "id": "mizner-elearning",
+    "title": "Mizner eLearning",
+    "role": "Interface Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/mizner-elearning.webp",
+    "thumb": "/images/projects/thumbs/mizner-elearning.webp",
+    "behance": "https://www.behance.net/gallery/8868755/Mizner-eLearning"
+  },
+  {
+    "id": "rangers-kiosk",
+    "title": "Rangers Kiosk",
+    "role": "Designer and Flash Animator",
+    "tools": "Photoshop, Flash, ActionScript 2",
+    "description": "",
+    "image": "/images/projects/full/rangers-kiosk.webp",
+    "thumb": "/images/projects/thumbs/rangers-kiosk.webp",
+    "behance": "https://www.behance.net/gallery/8868765/Rangers-Kiosk"
+  },
+  {
+    "id": "masterkey-mock-ups",
+    "title": "Masterkey Mock Ups",
+    "role": "Interface Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/masterkey-mock-ups.webp",
+    "thumb": "/images/projects/thumbs/masterkey-mock-ups.webp",
+    "behance": "https://www.behance.net/gallery/8868791/Masterkey-Mock-Ups"
+  },
+  {
+    "id": "bms-trade-booth",
+    "title": "BMS Trade Booth",
+    "role": "Sole Designer",
+    "tools": "Photoshop, Illustrator",
+    "description": "",
+    "image": "/images/projects/full/bms-trade-booth.webp",
+    "thumb": "/images/projects/thumbs/bms-trade-booth.webp",
+    "behance": "https://www.behance.net/gallery/8868811/BMS-Trade-Booth"
+  },
+  {
+    "id": "truvue-hrs-campaign-tradeshow-booths",
+    "title": "TruVue HRS Campaign Tradeshow Booths",
+    "role": "Graphic Designer",
+    "tools": "Illustrator, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/truvue-hrs-campaign-tradeshow-booths.webp",
+    "thumb": "/images/projects/thumbs/truvue-hrs-campaign-tradeshow-booths.webp",
+    "behance": "https://www.behance.net/gallery/8868847/TruVue-HRS-Campaign-Tradeshow-Booths"
+  },
+  {
+    "id": "bms-cost-calculator",
+    "title": "BMS Cost Calculator",
+    "role": "Sole Designer and Developer",
+    "tools": "Photoshop, Flash, Actionscript 2",
+    "description": "",
+    "image": "/images/projects/full/bms-cost-calculator.webp",
+    "thumb": "/images/projects/thumbs/bms-cost-calculator.webp",
+    "behance": "https://www.behance.net/gallery/8868925/BMS-Cost-Calculator"
+  },
+  {
+    "id": "truvue-microsite",
+    "title": "TruVue Microsite",
+    "role": "Sole Designer and Developer",
+    "tools": "Photoshop, HTML, CSS, jQuery",
+    "description": "",
+    "image": "/images/projects/full/truvue-microsite.webp",
+    "thumb": "/images/projects/thumbs/truvue-microsite.webp",
+    "behance": "https://www.behance.net/gallery/8874029/TruVue-Microsite"
+  },
+  {
+    "id": "bms-virtual-tour",
+    "title": "BMS Virtual Tour",
+    "role": "Designer and Developer",
+    "tools": "Photoshop, Flash, ActionScript 2",
+    "description": "",
+    "image": "/images/projects/full/bms-virtual-tour.webp",
+    "thumb": "/images/projects/thumbs/bms-virtual-tour.webp",
+    "behance": "https://www.behance.net/gallery/8874367/BMS-Virtual-Tour"
+  },
+  {
+    "id": "elearning-interface",
+    "title": "eLearning Interface",
+    "role": "Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/elearning-interface.webp",
+    "thumb": "/images/projects/thumbs/elearning-interface.webp",
+    "behance": "https://www.behance.net/gallery/8874445/eLearning-Interface"
+  },
+  {
+    "id": "responsive-design-mocks",
+    "title": "Responsive Design Mocks",
+    "role": "Designer and Front-End Developer",
+    "tools": "Photoshop, Illustrator, Coda, HTML, CSS, JavaScript",
+    "description": "",
+    "image": "/images/projects/full/responsive-design-mocks.webp",
+    "thumb": "/images/projects/thumbs/responsive-design-mocks.webp",
+    "behance": "https://www.behance.net/gallery/8874545/Responsive-Design-Mocks"
+  },
+  {
+    "id": "bms-website",
+    "title": "BMS Website",
+    "role": "Sole Designer and Developer",
+    "tools": "HTML, CSS, Joomla, jQuery, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/bms-website.webp",
+    "thumb": "/images/projects/thumbs/bms-website.webp",
+    "behance": "https://www.behance.net/gallery/8874665/BMS-Website"
+  },
+  {
+    "id": "collinsfit-web",
+    "title": "CollinsFit Web",
+    "role": "Sole Designer and Developer",
+    "tools": "HTML, CSS, jQuery, Wordpress, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/collinsfit-web.webp",
+    "thumb": "/images/projects/thumbs/collinsfit-web.webp",
+    "behance": "https://www.behance.net/gallery/8874789/CollinsFit-Web"
+  },
+  {
+    "id": "hance-construction",
+    "title": "Hance Construction",
+    "role": "Designer",
+    "tools": "Illustrator",
+    "description": "",
+    "image": "/images/projects/full/hance-construction.webp",
+    "thumb": "/images/projects/thumbs/hance-construction.webp",
+    "behance": "https://www.behance.net/gallery/8875417/Hance-Construction"
+  },
+  {
+    "id": "hrs-show-tickets",
+    "title": "HRS Show Tickets",
+    "role": "Designer",
+    "tools": "Photoshop, Illustrator, InDesign",
+    "description": "",
+    "image": "/images/projects/full/hrs-show-tickets.webp",
+    "thumb": "/images/projects/thumbs/hrs-show-tickets.webp",
+    "behance": "https://www.behance.net/gallery/8875639/HRS-Show-Tickets"
+  },
+  {
+    "id": "truvue-hrs-campaign-coasters",
+    "title": "TruVue HRS Campaign Coasters",
+    "role": "Designer",
+    "tools": "Illustrator, Photoshop, InDesign",
+    "description": "",
+    "image": "/images/projects/full/truvue-hrs-campaign-coasters.webp",
+    "thumb": "/images/projects/thumbs/truvue-hrs-campaign-coasters.webp",
+    "behance": "https://www.behance.net/gallery/8875799/TruVue-HRS-Campaign-Coasters"
+  },
+  {
+    "id": "vector-art",
+    "title": "Vector Art",
+    "role": "Designer",
+    "tools": "Illustrator",
+    "description": "",
+    "image": "/images/projects/full/vector-art.webp",
+    "thumb": "/images/projects/thumbs/vector-art.webp",
+    "behance": "https://www.behance.net/gallery/8876021/Vector-Art"
+  },
+  {
+    "id": "fan-art",
+    "title": "Fan Art",
+    "role": "Designer",
+    "tools": "Illustrator",
+    "description": "",
+    "image": "/images/projects/full/fan-art.webp",
+    "thumb": "/images/projects/thumbs/fan-art.webp",
+    "behance": "https://www.behance.net/gallery/8876099/Fan-Art"
+  },
+  {
+    "id": "local-band-concept-art",
+    "title": "Local Band Concept Art",
+    "role": "Designer",
+    "tools": "Illustrator, Photoshop",
+    "description": "",
+    "image": "/images/projects/full/local-band-concept-art.webp",
+    "thumb": "/images/projects/thumbs/local-band-concept-art.webp",
+    "behance": "https://www.behance.net/gallery/8876181/Local-Band-Concept-Art"
+  },
+  {
+    "id": "biomedical-system-responsive-design-mocks",
+    "title": "Biomedical System Responsive Design Mocks",
+    "role": "Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/biomedical-system-responsive-design-mocks.webp",
+    "thumb": "/images/projects/thumbs/biomedical-system-responsive-design-mocks.webp",
+    "behance": "https://www.behance.net/gallery/8876667/Biomedical-System-Responsive-Design-Mocks"
+  },
+  {
+    "id": "gdms-web-application",
+    "title": "GDMS Web Application",
+    "role": "Interface Designer and Front-End Developer",
+    "tools": "HTML, CSS, jQuery, Visual Studio",
+    "description": "",
+    "image": "/images/projects/full/gdms-web-application.webp",
+    "thumb": "/images/projects/thumbs/gdms-web-application.webp",
+    "behance": "https://www.behance.net/gallery/8877681/GDMS-Web-Application"
+  },
+  {
+    "id": "bms-flash-loop",
+    "title": "BMS Flash Loop",
+    "role": "Designer and Developer",
+    "tools": "Photoshop, Flash, ActionScript 2",
+    "description": "",
+    "image": "/images/projects/full/bms-flash-loop.webp",
+    "thumb": "/images/projects/thumbs/bms-flash-loop.webp",
+    "behance": "https://www.behance.net/gallery/8878201/BMS-Flash-Loop"
+  },
+  {
+    "id": "flash-training-module",
+    "title": "Flash Training Module",
+    "role": "Designer, Flash Developer",
+    "tools": "Photoshop, Flash",
+    "description": "",
+    "image": "/images/projects/full/flash-training-module.webp",
+    "thumb": "/images/projects/thumbs/flash-training-module.webp",
+    "behance": "https://www.behance.net/gallery/8879051/Flash-Training-Module"
+  },
+  {
+    "id": "data-app-design",
+    "title": "Data App Design",
+    "role": "Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/data-app-design.webp",
+    "thumb": "/images/projects/thumbs/data-app-design.webp",
+    "behance": "https://www.behance.net/gallery/8879161/Data-App-Design"
+  },
+  {
+    "id": "leed-consulting-firm-card",
+    "title": "LEED Consulting Firm Card",
+    "role": "Designer",
+    "tools": "Photoshop",
+    "description": "",
+    "image": "/images/projects/full/leed-consulting-firm-card.webp",
+    "thumb": "/images/projects/thumbs/leed-consulting-firm-card.webp",
+    "behance": "https://www.behance.net/gallery/9183583/LEED-Consulting-Firm-Card"
+  },
+  {
+    "id": "file-deployment-app",
+    "title": "File Deployment App",
+    "role": "Sole Designer/Front-End Developer",
+    "tools": "Photoshop, HTML, CSS, jQuery, Visual Studio",
+    "description": "",
+    "image": "/images/projects/full/file-deployment-app.webp",
+    "thumb": "/images/projects/thumbs/file-deployment-app.webp",
+    "behance": "https://www.behance.net/gallery/9183713/File-Deployment-App"
+  },
+  {
+    "id": "cardiotracker-pm-app",
+    "title": "CardioTracker PM App",
+    "role": "Sole Designer/Front-End Developer",
+    "tools": "Photoshop, HTML, CSS, jQuery, Visual Studio",
+    "description": "",
+    "image": "/images/projects/full/cardiotracker-pm-app.webp",
+    "thumb": "/images/projects/thumbs/cardiotracker-pm-app.webp",
+    "behance": "https://www.behance.net/gallery/9183841/CardioTracker-PM-App"
+  }
+];
+
+const overrides = new Map(curated.map((p) => [p.id, p]));
+
+export const allProjects = generated.map((g) =>
+    overrides.has(g.id) ? { ...g, ...overrides.get(g.id) } : g
+);

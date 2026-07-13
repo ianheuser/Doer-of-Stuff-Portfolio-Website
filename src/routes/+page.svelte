@@ -5,7 +5,15 @@
 	import DefinitionCard from '$lib/components/DefinitionCard.svelte';
 	import WaveDivider from '$lib/components/WaveDivider.svelte';
 	import ProjectShowcase from '$lib/components/ProjectShowcase.svelte';
+	import ProjectGrid from '$lib/components/ProjectGrid.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	/**
+	 * Which projects section to render — easy to flip while testing.
+	 * 'classic' = featured project + paged thumbnails (ProjectShowcase)
+	 * 'grid'    = full grid of every project with a detail modal (ProjectGrid)
+	 */
+	const SHOWCASE_MODE = 'grid';
 </script>
 
 <svelte:head>
@@ -69,7 +77,11 @@
 
 		<div class="ocean-content">
 			<h2>Stuff I Done Did Already</h2>
-			<ProjectShowcase />
+			{#if SHOWCASE_MODE === 'grid'}
+				<ProjectGrid />
+			{:else}
+				<ProjectShowcase />
+			{/if}
 		</div>
 
 		<Footer />
