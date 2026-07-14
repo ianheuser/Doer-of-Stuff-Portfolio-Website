@@ -350,5 +350,25 @@ export const projectImages = {
 		"/images/projects/gallery/cardiotracker-pm-app/01.webp",
 		"/images/projects/gallery/cardiotracker-pm-app/02.webp",
 		"/images/projects/gallery/cardiotracker-pm-app/03.webp"
+	],
+	"natural-light-website": [
+		"/images/projects/gallery/natural-light-website/01.webp",
+		"/images/projects/gallery/natural-light-website/02.webp",
+		"/images/projects/gallery/natural-light-website/03.webp",
+		"/images/projects/gallery/natural-light-website/04.webp",
+		"/images/projects/gallery/natural-light-website/05.webp",
+		"/images/projects/gallery/natural-light-website/06.webp",
+		"/images/projects/gallery/natural-light-website/07.webp",
+		"/images/projects/gallery/natural-light-website/08.webp"
+	],
+	"busch-website": [
+		"/images/projects/gallery/busch-website/01.webp",
+		"/images/projects/gallery/busch-website/02.webp",
+		"/images/projects/gallery/busch-website/03.webp",
+		"/images/projects/gallery/busch-website/04.webp",
+		"/images/projects/gallery/busch-website/05.webp",
+		"/images/projects/gallery/busch-website/06.webp",
+		"/images/projects/gallery/busch-website/07.webp",
+		"/images/projects/gallery/busch-website/08.webp"
 	]
 };

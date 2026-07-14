@@ -780,5 +780,37 @@
       "image_02.jpg",
       "image_03.jpg"
     ]
+  },
+  {
+    "folder": "natural-light-website",
+    "title": "Natural Light Website",
+    "behance": [],
+    "thumbnail": "image_01.png",
+    "images": [
+      "image_01.png",
+      "image_02.png",
+      "image_03.png",
+      "image_04.png",
+      "image_05.png",
+      "fullscreen/image_01.png",
+      "fullscreen/image_02.png",
+      "fullscreen/image_03.png"
+    ]
+  },
+  {
+    "folder": "busch-website",
+    "title": "Busch Website",
+    "behance": [],
+    "thumbnail": "image_01.png",
+    "images": [
+      "image_01.png",
+      "image_02.png",
+      "www.busch.com_nascar.png",
+      "www.busch.com_nascar (1).png",
+      "www.busch.com_nascar (2).png",
+      "www.busch.com_nascar (3).png",
+      "www.busch.com_nascar (4).png",
+      "fullscreen/image_01.png"
+    ]
   }
 ]

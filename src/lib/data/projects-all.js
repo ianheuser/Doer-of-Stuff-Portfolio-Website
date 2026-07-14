@@ -17,8 +17,44 @@ import { projectImages } from './project-images.js';
 
 const generated = [
   {
-    "id": "accomplizt-logo",
+    "id": "natural-light-website",
     "order": 1,
+    "archived": false,
+    "title": "Natural Light Website",
+    "role": "Sole Developer",
+    "tools": "SvelteKit, Builder.io CMS, JavaScript, HTML, CSS",
+    "description": "While at Anheuser-Busch I built naturallight.com end to end as a SvelteKit app on Builder.io CMS. I was the sole developer on the project, working directly with the brand's designers to bring their vision to the web.",
+    "image": "/images/projects/full/natural-light-website.webp",
+    "thumb": "/images/projects/thumbs/natural-light-website.webp",
+    "behance": ""
+  },
+  {
+    "id": "busch-website",
+    "order": 2,
+    "archived": false,
+    "title": "Busch Website",
+    "role": "Sole Developer",
+    "tools": "SvelteKit, Builder.io CMS, JavaScript, HTML, CSS",
+    "description": "The second brand site I owned solo at Anheuser-Busch: busch.com, developed as a SvelteKit app on Builder.io CMS. As the only developer on the project I handled everything from architecture to deployment, collaborating with the brand's designers.",
+    "image": "/images/projects/full/busch-website.webp",
+    "thumb": "/images/projects/thumbs/busch-website.webp",
+    "behance": ""
+  },
+  {
+    "id": "michelob-ultra-website",
+    "order": 3,
+    "archived": false,
+    "title": "Michelob Ultra Website",
+    "role": "Developer (team of three)",
+    "tools": "SvelteKit, Builder.io CMS, JavaScript, HTML, CSS",
+    "description": "My first SvelteKit project at Anheuser-Busch: michelobultra.com, built with two other developers on Builder.io CMS while I was learning Svelte. That experience set me up to take on naturallight.com and busch.com as the sole developer.",
+    "image": "/images/projects/full/michelob-ultra-website.webp",
+    "thumb": "/images/projects/thumbs/michelob-ultra-website.webp",
+    "behance": ""
+  },
+  {
+    "id": "accomplizt-logo",
+    "order": 4,
     "archived": false,
     "title": "Accomplizt - Logo",
     "role": "Designer",
@@ -30,7 +66,7 @@ const generated = [
   },
   {
     "id": "website-landing-page-mockup",
-    "order": 2,
+    "order": 5,
     "archived": false,
     "title": "Website Landing Page Mockup",
     "role": "",
@@ -42,7 +78,7 @@ const generated = [
   },
   {
     "id": "vertegy-consultants-website",
-    "order": 3,
+    "order": 6,
     "archived": false,
     "title": "Vertegy Consultants Website",
     "role": "Sole Designer and Front-End Developer",
@@ -54,7 +90,7 @@ const generated = [
   },
   {
     "id": "prime-lawn-care",
-    "order": 4,
+    "order": 7,
     "archived": false,
     "title": "Prime Lawn Care",
     "role": "",
@@ -66,7 +102,7 @@ const generated = [
   },
   {
     "id": "dan-koch-industries",
-    "order": 5,
+    "order": 8,
     "archived": false,
     "title": "Dan Koch Industries",
     "role": "Art Director, Graphic Designer",
@@ -78,7 +114,7 @@ const generated = [
   },
   {
     "id": "kelloggs-conference-logo",
-    "order": 6,
+    "order": 9,
     "archived": false,
     "title": "Kellogg's Conference Logo",
     "role": "",
@@ -90,7 +126,7 @@ const generated = [
   },
   {
     "id": "medical-clinics-100",
-    "order": 7,
+    "order": 10,
     "archived": false,
     "title": "Medical Clinics 100",
     "role": "Designer and Front-End Developer",
@@ -102,7 +138,7 @@ const generated = [
   },
   {
     "id": "octopiano",
-    "order": 8,
+    "order": 11,
     "archived": true,
     "title": "OctoPiano",
     "role": "Painter and Illustrator",
@@ -114,7 +150,7 @@ const generated = [
   },
   {
     "id": "maddies-birthday-skull",
-    "order": 9,
+    "order": 12,
     "archived": true,
     "title": "Maddie's Birthday Skull",
     "role": "Painter",
@@ -126,7 +162,7 @@ const generated = [
   },
   {
     "id": "dig-it-construction",
-    "order": 10,
+    "order": 13,
     "archived": true,
     "title": "Dig It Construction",
     "role": "Graphic Designer",
@@ -138,7 +174,7 @@ const generated = [
   },
   {
     "id": "masterkey-interactive-flash-presentation",
-    "order": 11,
+    "order": 14,
     "archived": false,
     "title": "Masterkey Interactive Flash Presentation",
     "role": "Art Director, Graphic Designer, Animator, Developer",
@@ -150,7 +186,7 @@ const generated = [
   },
   {
     "id": "masterkey-it-flash-presentation",
-    "order": 12,
+    "order": 15,
     "archived": false,
     "title": "Masterkey IT Flash Presentation",
     "role": "Art Director, Animator, Graphic Designer, Developer",
@@ -162,7 +198,7 @@ const generated = [
   },
   {
     "id": "biomedical-systems-re-branding",
-    "order": 13,
+    "order": 16,
     "archived": false,
     "title": "Biomedical Systems Re-Branding",
     "role": "Art Director, Graphic Designer",
@@ -174,7 +210,7 @@ const generated = [
   },
   {
     "id": "biomedical-systems-4-panel-brochure",
-    "order": 14,
+    "order": 17,
     "archived": false,
     "title": "Biomedical Systems 4 Panel Brochure",
     "role": "Graphic Designer Tool: Photoshop",
@@ -186,7 +222,7 @@ const generated = [
   },
   {
     "id": "biomedical-systems-modality-brochures",
-    "order": 15,
+    "order": 18,
     "archived": false,
     "title": "Biomedical Systems - Modality Brochures",
     "role": "Graphic Designer",
@@ -198,7 +234,7 @@ const generated = [
   },
   {
     "id": "biomed-print",
-    "order": 16,
+    "order": 19,
     "archived": true,
     "title": "Biomed Print",
     "role": "",
@@ -210,7 +246,7 @@ const generated = [
   },
   {
     "id": "bionet-intranet-logo",
-    "order": 17,
+    "order": 20,
     "archived": false,
     "title": "BioNet Intranet Logo",
     "role": "",
@@ -222,7 +258,7 @@ const generated = [
   },
   {
     "id": "various-logos",
-    "order": 18,
+    "order": 21,
     "archived": false,
     "title": "Various Logos (COPY)",
     "role": "",
@@ -234,7 +270,7 @@ const generated = [
   },
   {
     "id": "digital-pathology-email-blast",
-    "order": 19,
+    "order": 22,
     "archived": false,
     "title": "Digital Pathology Email Blast",
     "role": "",
@@ -246,7 +282,7 @@ const generated = [
   },
   {
     "id": "ipad-web-app",
-    "order": 20,
+    "order": 23,
     "archived": false,
     "title": "iPAD Web App",
     "role": "UI Designer and Front End Developer",
@@ -258,7 +294,7 @@ const generated = [
   },
   {
     "id": "phish-fan-art",
-    "order": 21,
+    "order": 24,
     "archived": false,
     "title": "Phish Fan Art",
     "role": "Graphic/Digital Artist",
@@ -270,7 +306,7 @@ const generated = [
   },
   {
     "id": "global-surgical-web-design",
-    "order": 22,
+    "order": 25,
     "archived": false,
     "title": "Global Surgical Web Design",
     "role": "Interface Designer",
@@ -282,7 +318,7 @@ const generated = [
   },
   {
     "id": "elearning-interface-design",
-    "order": 23,
+    "order": 26,
     "archived": false,
     "title": "eLearning Interface Design",
     "role": "Interface Designer Company: Masterkey Interactive Tools Used: Photoshop",
@@ -294,7 +330,7 @@ const generated = [
   },
   {
     "id": "caboose-logo-and-website",
-    "order": 24,
+    "order": 27,
     "archived": false,
     "title": "Caboose Logo and Website",
     "role": "Sole Designer and Developer",
@@ -306,7 +342,7 @@ const generated = [
   },
   {
     "id": "cricket-booth-interface",
-    "order": 25,
+    "order": 28,
     "archived": false,
     "title": "Cricket Booth Interface",
     "role": "Sole Designer, Flash Animator",
@@ -318,7 +354,7 @@ const generated = [
   },
   {
     "id": "ecg-warehouse-website",
-    "order": 26,
+    "order": 29,
     "archived": false,
     "title": "ECG Warehouse Website",
     "role": "Sole Designer and Developer",
@@ -330,7 +366,7 @@ const generated = [
   },
   {
     "id": "knicks-kiosk",
-    "order": 27,
+    "order": 30,
     "archived": false,
     "title": "Knicks Kiosk",
     "role": "UI Designer and Flash Animator",
@@ -342,7 +378,7 @@ const generated = [
   },
   {
     "id": "liberty-kiosk",
-    "order": 28,
+    "order": 31,
     "archived": false,
     "title": "Liberty Kiosk",
     "role": "Interface Designer",
@@ -354,7 +390,7 @@ const generated = [
   },
   {
     "id": "mizner-elearning",
-    "order": 29,
+    "order": 32,
     "archived": false,
     "title": "Mizner eLearning",
     "role": "Interface Designer",
@@ -366,7 +402,7 @@ const generated = [
   },
   {
     "id": "rangers-kiosk",
-    "order": 30,
+    "order": 33,
     "archived": false,
     "title": "Rangers Kiosk",
     "role": "Designer and Flash Animator",
@@ -378,7 +414,7 @@ const generated = [
   },
   {
     "id": "masterkey-mock-ups",
-    "order": 31,
+    "order": 34,
     "archived": true,
     "title": "Masterkey Mock Ups",
     "role": "Interface Designer",
@@ -390,7 +426,7 @@ const generated = [
   },
   {
     "id": "bms-trade-booth",
-    "order": 32,
+    "order": 35,
     "archived": false,
     "title": "BMS Trade Booth",
     "role": "Sole Designer",
@@ -402,7 +438,7 @@ const generated = [
   },
   {
     "id": "truvue-hrs-campaign-tradeshow-booths",
-    "order": 33,
+    "order": 36,
     "archived": false,
     "title": "TruVue HRS Campaign Tradeshow Booths",
     "role": "Graphic Designer",
@@ -414,7 +450,7 @@ const generated = [
   },
   {
     "id": "bms-cost-calculator",
-    "order": 34,
+    "order": 37,
     "archived": false,
     "title": "BMS Cost Calculator",
     "role": "Sole Designer and Developer",
@@ -426,7 +462,7 @@ const generated = [
   },
   {
     "id": "truvue-microsite",
-    "order": 35,
+    "order": 38,
     "archived": false,
     "title": "TruVue Microsite",
     "role": "Sole Designer and Developer",
@@ -438,7 +474,7 @@ const generated = [
   },
   {
     "id": "bms-virtual-tour",
-    "order": 36,
+    "order": 39,
     "archived": false,
     "title": "BMS Virtual Tour",
     "role": "Designer and Developer",
@@ -450,7 +486,7 @@ const generated = [
   },
   {
     "id": "elearning-interface",
-    "order": 37,
+    "order": 40,
     "archived": false,
     "title": "eLearning Interface",
     "role": "Designer",
@@ -462,7 +498,7 @@ const generated = [
   },
   {
     "id": "responsive-design-mocks",
-    "order": 38,
+    "order": 41,
     "archived": false,
     "title": "Responsive Design Mocks",
     "role": "Designer and Front-End Developer",
@@ -474,7 +510,7 @@ const generated = [
   },
   {
     "id": "bms-website",
-    "order": 39,
+    "order": 42,
     "archived": false,
     "title": "BMS Website",
     "role": "Sole Designer and Developer",
@@ -486,7 +522,7 @@ const generated = [
   },
   {
     "id": "collinsfit-web",
-    "order": 40,
+    "order": 43,
     "archived": false,
     "title": "CollinsFit Web",
     "role": "Sole Designer and Developer",
@@ -498,7 +534,7 @@ const generated = [
   },
   {
     "id": "hance-construction",
-    "order": 41,
+    "order": 44,
     "archived": false,
     "title": "Hance Construction",
     "role": "Designer",
@@ -510,7 +546,7 @@ const generated = [
   },
   {
     "id": "hrs-show-tickets",
-    "order": 42,
+    "order": 45,
     "archived": false,
     "title": "HRS Show Tickets",
     "role": "Designer",
@@ -522,7 +558,7 @@ const generated = [
   },
   {
     "id": "truvue-hrs-campaign-coasters",
-    "order": 43,
+    "order": 46,
     "archived": false,
     "title": "TruVue HRS Campaign Coasters",
     "role": "Designer",
@@ -534,7 +570,7 @@ const generated = [
   },
   {
     "id": "vector-art",
-    "order": 44,
+    "order": 47,
     "archived": true,
     "title": "Vector Art",
     "role": "Designer",
@@ -546,7 +582,7 @@ const generated = [
   },
   {
     "id": "fan-art",
-    "order": 45,
+    "order": 48,
     "archived": true,
     "title": "Fan Art",
     "role": "Designer",
@@ -558,7 +594,7 @@ const generated = [
   },
   {
     "id": "local-band-concept-art",
-    "order": 46,
+    "order": 49,
     "archived": true,
     "title": "Local Band Concept Art",
     "role": "Designer",
@@ -570,7 +606,7 @@ const generated = [
   },
   {
     "id": "biomedical-system-responsive-design-mocks",
-    "order": 47,
+    "order": 50,
     "archived": false,
     "title": "Biomedical System Responsive Design Mocks",
     "role": "Designer",
@@ -582,7 +618,7 @@ const generated = [
   },
   {
     "id": "gdms-web-application",
-    "order": 48,
+    "order": 51,
     "archived": false,
     "title": "GDMS Web Application",
     "role": "Interface Designer and Front-End Developer",
@@ -594,7 +630,7 @@ const generated = [
   },
   {
     "id": "bms-flash-loop",
-    "order": 49,
+    "order": 52,
     "archived": false,
     "title": "BMS Flash Loop",
     "role": "Designer and Developer",
@@ -606,7 +642,7 @@ const generated = [
   },
   {
     "id": "flash-training-module",
-    "order": 50,
+    "order": 53,
     "archived": false,
     "title": "Flash Training Module",
     "role": "Designer, Flash Developer",
@@ -618,7 +654,7 @@ const generated = [
   },
   {
     "id": "data-app-design",
-    "order": 51,
+    "order": 54,
     "archived": false,
     "title": "Data App Design",
     "role": "Designer",
@@ -630,7 +666,7 @@ const generated = [
   },
   {
     "id": "leed-consulting-firm-card",
-    "order": 52,
+    "order": 55,
     "archived": false,
     "title": "LEED Consulting Firm Card",
     "role": "Designer",
@@ -642,7 +678,7 @@ const generated = [
   },
   {
     "id": "file-deployment-app",
-    "order": 53,
+    "order": 56,
     "archived": false,
     "title": "File Deployment App",
     "role": "Sole Designer/Front-End Developer",
@@ -654,7 +690,7 @@ const generated = [
   },
   {
     "id": "cardiotracker-pm-app",
-    "order": 54,
+    "order": 57,
     "archived": false,
     "title": "CardioTracker PM App",
     "role": "Sole Designer/Front-End Developer",
