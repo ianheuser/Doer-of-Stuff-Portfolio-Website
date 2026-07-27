@@ -2,8 +2,8 @@
 	@typedef {Object} Project
 	@property {string} id      Matches the folder name in design-assets-originals
 	@property {string} title
-	@property {string} role
-	@property {string} tools
+	@property {string[]} role
+	@property {string[]} tools
 	@property {string} description
 	@property {string} image   Large featured image
 	@property {string} thumb   Thumbnail image
@@ -16,8 +16,8 @@ export const projects = [
 	{
 		id: 'bms-cost-calculator',
 		title: 'BMS Cost Calculator',
-		role: 'Sole Designer and Developer',
-		tools: 'Photoshop, Flash, ActionScript 2',
+		role: ['Sole Designer', 'Developer'],
+		tools: ['Photoshop', 'Flash', 'ActionScript 2'],
 		description:
 			'While at Biomedical Systems, our sales men and women had a series of calculations that they made inside of excel files to get ballpark estimations of how much their prospective clients could save if they ran their trials with us. My marketing director at the time came to me with the challenge of making an application that took in that same data, and presented graphs and charts, and was also something nice that the clients could see as well.',
 		image: '/images/projects/bms-cost-calculator.webp',
@@ -27,8 +27,8 @@ export const projects = [
 	{
 		id: 'knicks-kiosk',
 		title: 'Knicks Kiosk',
-		role: 'UI Designer and Flash Animator',
-		tools: 'Photoshop, Flash',
+		role: ['UI Designer', 'Flash Animator'],
+		tools: ['Photoshop', 'Flash'],
 		description:
 			'TODO — an interactive touch screen kiosk experience built for the New York Knicks. Add the story: the client, the ask, and what you delivered.',
 		image: '/images/projects/knicks-kiosk.webp',
@@ -38,8 +38,8 @@ export const projects = [
 	{
 		id: 'rangers-kiosk',
 		title: 'Rangers Kiosk',
-		role: 'Designer and Flash Animator',
-		tools: 'Photoshop, Flash, ActionScript 2',
+		role: ['Designer', 'Flash Animator'],
+		tools: ['Photoshop', 'Flash', 'ActionScript 2'],
 		description:
 			'TODO — an interactive touch screen kiosk experience built for the New York Rangers. Add the story: the client, the ask, and what you delivered.',
 		image: '/images/projects/rangers-kiosk.webp',
@@ -49,8 +49,8 @@ export const projects = [
 	{
 		id: 'bms-virtual-tour',
 		title: 'BMS Virtual Tour',
-		role: 'Designer and Developer',
-		tools: 'Photoshop, Flash, ActionScript 2',
+		role: ['Designer', 'Developer'],
+		tools: ['Photoshop', 'Flash', 'ActionScript 2'],
 		description:
 			'TODO — a virtual tour application for Biomedical Systems. Add the story.',
 		image: '/images/projects/bms-virtual-tour.webp',
@@ -60,8 +60,8 @@ export const projects = [
 	{
 		id: 'medical-clinics-100',
 		title: 'Medical Clinics 100',
-		role: 'Designer and Front-End Developer',
-		tools: 'Photoshop, Illustrator, Coda',
+		role: ['Designer', 'Front-End Developer'],
+		tools: ['Photoshop', 'Illustrator', 'HTML', 'CSS', 'jQuery'],
 		description:
 			'TODO — a responsive website for a network of medical clinics. Add the story.',
 		image: '/images/projects/medical-clinics-100.webp',
@@ -71,8 +71,8 @@ export const projects = [
 	{
 		id: 'ipad-web-app',
 		title: 'iPad Web App',
-		role: 'UI Designer and Front End Developer',
-		tools: 'HTML, CSS, jQuery, Photoshop',
+		role: ['UI Designer', 'Front-End Developer'],
+		tools: ['HTML', 'CSS', 'jQuery', 'Photoshop'],
 		description:
 			'TODO — a touch-first web application designed and built for the iPad. Add the story.',
 		image: '/images/projects/ipad-web-app.webp',
@@ -82,8 +82,8 @@ export const projects = [
 	{
 		id: 'masterkey-interactive-flash-presentation',
 		title: 'Masterkey Interactive Sales Presentation',
-		role: 'Art Director, Graphic Designer, Animator, Developer',
-		tools: 'Photoshop, Flash',
+		role: ['Art Director', 'Graphic Designer', 'Animator', 'Developer'],
+		tools: ['Photoshop', 'Flash'],
 		description:
 			'TODO — an interactive Flash sales presentation for Masterkey. Add the story.',
 		image: '/images/projects/masterkey-interactive-flash-presentation.webp',
@@ -93,8 +93,8 @@ export const projects = [
 	{
 		id: 'vertegy-consultants-website',
 		title: 'Vertegy Consultants Website',
-		role: 'Sole Designer and Front-End Developer',
-		tools: 'Photoshop, jQuery, HTML, CSS',
+		role: ['Sole Designer', 'Front-End Developer'],
+		tools: ['Photoshop', 'jQuery', 'HTML', 'CSS'],
 		description:
 			'TODO — the full design and front end build of the Vertegy Consultants website. Add the story.',
 		image: '/images/projects/vertegy-consultants-website.webp',
