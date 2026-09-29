@@ -78,6 +78,8 @@
 		background-repeat: repeat-x;
 		background-size: var(--tile) 100%;
 		animation: drift 26s linear infinite;
+		transform: translateZ(0);
+		backface-visibility: hidden;
 	}
 
 	.body {
