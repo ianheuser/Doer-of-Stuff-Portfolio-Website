@@ -52,9 +52,10 @@
 
 <style>
 	.waves {
-		--crest-h: clamp(140px, 27vw, 255px);
+		--crest-h: clamp(140px, 27vw, 165px);
 		position: relative;
 		height: calc(var(--crest-h) * 2.06);
+		margin: 110px 0px 0px;
 	}
 
 	.waves .layer {

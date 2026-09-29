@@ -139,6 +139,7 @@
 	/* Cards dip into the waves */
 	.space-cards {
 		margin-bottom: clamp(-90px, -4vw, -30px);
+		margin-top: 70px;
 	}
 
 	/* Astronaut spans from below the nav down into the waves; z-index 4
@@ -185,6 +186,9 @@
 	/* ---------------------------------------------- tablet (601–1100px) */
 	@media (max-width: 1100px) and (min-width: 901px) {
 		/* Cards stack in a right-hand column beside the astronaut */
+
+		
+
 		.cards {
 			flex-direction: column;
 			align-items: flex-end;
@@ -214,6 +218,12 @@
 
 	/* -------------------------------------------------- phone (≤600px) */
 	@media (max-width: 900px) {
+
+		.space-cards {
+			margin-bottom: clamp(-90px, -4vw, -30px);
+			margin-top: 0px;
+		}
+
 		.space-head {
 			padding-top: calc(var(--nav-height) + 40px);
 		}
@@ -221,8 +231,8 @@
 		h1 {
 			text-align: center;
 			margin: 0 auto;
-			max-width: 90%;
-			font-size: 27px;
+			width: 400px;
+			font-size: 28px;
 			margin-top: 25px;
 			margin-bottom: 73px;
 		}
@@ -241,12 +251,12 @@
 		.astronaut {
 			position: relative;
 			z-index: 4;
-			top: auto;
+			top: 0px;
 			left: auto;
 			width: min(380px, 85vw);
-			height: 500px;
+			height: 450px;
 			overflow: hidden;
-			margin: 12px auto -30px;
+			margin: 0px auto -30px;
 		}
 
 		.astronaut img {
@@ -270,8 +280,18 @@
 			margin-bottom: -50px;
 		}
 
-		h2 {
+	}
+
+	@media (max-width: 500px) {
+
+		h1 {
 			text-align: center;
+			margin: 0 auto;
+			width: 370px;
+			font-size: 24px;
+			margin-top: 25px;
+			margin-bottom: 73px;
 		}
+
 	}
 </style>
