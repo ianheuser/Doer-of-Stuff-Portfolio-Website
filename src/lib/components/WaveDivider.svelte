@@ -76,10 +76,8 @@
 		height: var(--crest-h);
 		flex-shrink: 0;
 		background-repeat: repeat-x;
-		background-size: calc(var(--tile) + 1px) 100%;
+		background-size: var(--tile) 100%;
 		animation: drift 26s linear infinite;
-		transform: translateZ(0);
-		backface-visibility: hidden;
 	}
 
 	.body {
@@ -166,7 +164,7 @@
 
 	@keyframes drift {
 		to {
-			background-position-x: calc(var(--tile) + 1px);
+			background-position-x: var(--tile);
 		}
 	}
 
@@ -182,6 +180,16 @@
 			position: relative;
 			height: calc(var(--crest-h) * 2.06);
 			margin: -200px 0px 0px;
+		}
+
+		/* Freeze the front crest and size its tile wider than the viewport so
+		   only one tile is ever on screen — no second tile boundary means no
+		   sub-pixel seam, which is what shows up on some phones. */
+		.layer.front .crest {
+			animation: none;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 110% 100%;
 		}
 	}
 </style>
