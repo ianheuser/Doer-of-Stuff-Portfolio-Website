@@ -76,7 +76,7 @@
 		height: var(--crest-h);
 		flex-shrink: 0;
 		background-repeat: repeat-x;
-		background-size: var(--tile) 100%;
+		background-size: calc(var(--tile) + 1px) 100%;
 		animation: drift 26s linear infinite;
 		transform: translateZ(0);
 		backface-visibility: hidden;
@@ -166,7 +166,7 @@
 
 	@keyframes drift {
 		to {
-			background-position-x: var(--tile);
+			background-position-x: calc(var(--tile) + 1px);
 		}
 	}
 
