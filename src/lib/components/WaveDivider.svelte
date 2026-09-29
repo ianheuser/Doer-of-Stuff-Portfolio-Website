@@ -175,4 +175,13 @@
 			animation: none;
 		}
 	}
+
+	@media (max-width: 900px) {
+		.waves {
+			--crest-h: clamp(140px, 27vw, 165px);
+			position: relative;
+			height: calc(var(--crest-h) * 2.06);
+			margin: -200px 0px 0px;
+		}
+	}
 </style>
