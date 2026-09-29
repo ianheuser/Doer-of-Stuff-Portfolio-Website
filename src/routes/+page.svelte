@@ -36,7 +36,7 @@
 
 		<div class="astronaut">
 			<img
-				src={asset('/images/astronaut2.webp')}
+				src={asset('/images/doer.png')}
 				alt="An astronaut in a knit beanie with the DO logo, helmet tucked under his arm"
 			/>
 		</div>
@@ -76,7 +76,7 @@
 		<ParticleField variant="bubbles" count={20} />
 
 		<div class="ocean-content">
-			<h2>Stuff I Done Did Already</h2>
+			<!-- <h2>Stuff I Done Did Already</h2> -->
 			{#if SHOWCASE_MODE === 'grid'}
 				<ProjectGrid />
 			{:else}
@@ -146,9 +146,9 @@
 	.astronaut {
 		position: absolute;
 		z-index: 4;
-		top: var(--nav-height);
+		top: 150px;
 		left: max(calc(50vw - 760px), -6vw);
-		width: clamp(560px, 63vw, 800px);
+		width: 600px;
 		aspect-ratio: 2 / 3;
 		pointer-events: none;
 	}
@@ -171,7 +171,7 @@
 		z-index: 1;
 		max-width: var(--content-max);
 		margin: 0 auto;
-		padding: clamp(40px, 6vw, 96px) var(--gutter) clamp(48px, 6vw, 110px);
+		padding: 0px var(--gutter) clamp(48px, 6vw, 110px);
 	}
 
 	h2 {
@@ -183,7 +183,7 @@
 	}
 
 	/* ---------------------------------------------- tablet (601–1100px) */
-	@media (max-width: 1100px) and (min-width: 601px) {
+	@media (max-width: 1100px) and (min-width: 901px) {
 		/* Cards stack in a right-hand column beside the astronaut */
 		.cards {
 			flex-direction: column;
@@ -194,7 +194,7 @@
 
 		.card {
 			flex-basis: auto;
-			width: min(366px, 52vw);
+			width: 49vw;
 		}
 
 		.astronaut {
@@ -213,7 +213,7 @@
 	}
 
 	/* -------------------------------------------------- phone (≤600px) */
-	@media (max-width: 600px) {
+	@media (max-width: 900px) {
 		.space-head {
 			padding-top: calc(var(--nav-height) + 40px);
 		}
@@ -221,7 +221,10 @@
 		h1 {
 			text-align: center;
 			margin: 0 auto;
-			max-width: 20em;
+			max-width: 90%;
+			font-size: 27px;
+			margin-top: 25px;
+			margin-bottom: 73px;
 		}
 
 		.h-desktop {
@@ -241,7 +244,7 @@
 			top: auto;
 			left: auto;
 			width: min(380px, 85vw);
-			height: calc(min(380px, 85vw) * 0.98);
+			height: 500px;
 			overflow: hidden;
 			margin: 12px auto -30px;
 		}
@@ -252,7 +255,7 @@
 
 		.cards {
 			flex-direction: column;
-			align-items: stretch;
+			align-items: center;
 			gap: 28px;
 			margin-top: 12px;
 		}
@@ -260,6 +263,7 @@
 		.card {
 			flex-basis: auto;
 			width: 100%;
+			max-width: 700px;
 		}
 
 		.space-cards {
